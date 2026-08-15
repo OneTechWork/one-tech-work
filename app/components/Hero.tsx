@@ -17,8 +17,14 @@ export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
   const fadeUp = {
-    initial: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
-    animate: { opacity: 1, y: 0 },
+    initial: {
+      opacity: 0,
+      y: shouldReduceMotion ? 0 : 24,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
   };
 
   return (
@@ -31,7 +37,10 @@ export default function Hero() {
       ========================================================= */}
 
       {/* Subtle grid */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.065]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.065]"
+      >
         <div
           className="absolute inset-0"
           style={{
@@ -49,17 +58,17 @@ export default function Hero() {
       {/* Top center glow */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-[-220px] h-[420px] w-[700px] -translate-x-1/2 rounded-full bg-cyan-500/[0.07] blur-[140px]"
+        className="pointer-events-none absolute left-1/2 top-[-220px] h-[320px] w-[520px] -translate-x-1/2 rounded-full bg-cyan-500/[0.06] blur-[100px] sm:h-[420px] sm:w-[700px] sm:bg-cyan-500/[0.07] sm:blur-[140px]"
         animate={
           shouldReduceMotion
             ? undefined
             : {
-                scale: [1, 1.12, 1],
-                opacity: [0.5, 0.8, 0.5],
+                scale: [1, 1.08, 1],
+                opacity: [0.5, 0.75, 0.5],
               }
         }
         transition={{
-          duration: 10,
+          duration: 12,
           repeat: Infinity,
           ease: "easeInOut",
         }}
@@ -68,18 +77,18 @@ export default function Hero() {
       {/* Cyan ambient glow */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-cyan-500/[0.13] blur-[140px] sm:h-[520px] sm:w-[520px]"
+        className="pointer-events-none absolute -left-40 top-20 h-[300px] w-[300px] rounded-full bg-cyan-500/[0.10] blur-[100px] sm:h-[520px] sm:w-[520px] sm:bg-cyan-500/[0.13] sm:blur-[140px]"
         animate={
           shouldReduceMotion
             ? undefined
             : {
-                x: [0, 70, 0],
-                y: [0, 40, 0],
-                scale: [1, 1.1, 1],
+                x: [0, 55, 0],
+                y: [0, 30, 0],
+                scale: [1, 1.06, 1],
               }
         }
         transition={{
-          duration: 13,
+          duration: 16,
           repeat: Infinity,
           ease: "easeInOut",
         }}
@@ -88,18 +97,18 @@ export default function Hero() {
       {/* Violet ambient glow */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-40 -right-40 h-[440px] w-[440px] rounded-full bg-violet-600/[0.12] blur-[150px] sm:h-[560px] sm:w-[560px]"
+        className="pointer-events-none absolute -bottom-40 -right-40 h-[320px] w-[320px] rounded-full bg-violet-600/[0.09] blur-[105px] sm:h-[560px] sm:w-[560px] sm:bg-violet-600/[0.12] sm:blur-[150px]"
         animate={
           shouldReduceMotion
             ? undefined
             : {
-                x: [0, -60, 0],
-                y: [0, -45, 0],
-                scale: [1, 1.12, 1],
+                x: [0, -50, 0],
+                y: [0, -35, 0],
+                scale: [1, 1.08, 1],
               }
         }
         transition={{
-          duration: 15,
+          duration: 18,
           repeat: Infinity,
           ease: "easeInOut",
         }}
@@ -137,9 +146,7 @@ export default function Hero() {
               transition={{ duration: 0.75 }}
               className="mb-7 flex items-center gap-3 sm:mb-9 sm:gap-4"
             >
-              {/* Logo */}
               <div className="relative shrink-0">
-                {/* Glow behind logo */}
                 <div
                   aria-hidden="true"
                   className="absolute inset-[-10px] rounded-full bg-cyan-400/10 blur-xl"
@@ -151,13 +158,12 @@ export default function Hero() {
                     alt="One Tech Work logo"
                     fill
                     priority
-                    sizes="68px"
+                    sizes="(max-width: 640px) 58px, 68px"
                     className="object-contain"
                   />
                 </div>
               </div>
 
-              {/* Brand text */}
               <div className="min-w-0">
                 <div className="text-[17px] font-bold tracking-[0.11em] text-white sm:text-xl">
                   ONE TECH WORK
@@ -169,7 +175,7 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* Small label */}
+            {/* Label */}
             <motion.div
               initial={fadeUp.initial}
               animate={fadeUp.animate}
@@ -208,10 +214,7 @@ export default function Hero() {
               move forward.
             </motion.p>
 
-            {/* =================================================
-                CTA
-            ================================================= */}
-
+            {/* CTA */}
             <motion.div
               initial={fadeUp.initial}
               animate={fadeUp.animate}
@@ -259,11 +262,10 @@ export default function Hero() {
               className="mt-8 flex items-center gap-3 text-[10px] uppercase tracking-[0.16em] text-white/25 sm:mt-10 sm:text-xs sm:tracking-[0.22em]"
             >
               <span className="h-px w-8 bg-white/15 sm:w-10" />
-
               <span>Design • Development • Innovation</span>
             </motion.div>
 
-            {/* Mini trust points */}
+            {/* Trust points */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -303,12 +305,12 @@ export default function Hero() {
               y: 0,
             }}
             transition={{ duration: 1, delay: 0.25 }}
-            className="relative mx-auto w-full max-w-[560px] lg:max-w-none"
+            className="relative mx-auto w-full max-w-[480px] sm:max-w-[560px] lg:max-w-none"
           >
             {/* Main glow */}
             <div
               aria-hidden="true"
-              className="absolute left-1/2 top-1/2 h-[65%] w-[65%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/[0.08] blur-[100px]"
+              className="absolute left-1/2 top-1/2 h-[60%] w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/[0.07] blur-[80px] sm:h-[65%] sm:w-[65%] sm:bg-cyan-400/[0.08] sm:blur-[100px]"
             />
 
             {/* Main glass panel */}
@@ -317,11 +319,11 @@ export default function Hero() {
                 shouldReduceMotion
                   ? undefined
                   : {
-                      y: [0, -10, 0],
+                      y: [0, -7, 0],
                     }
               }
               transition={{
-                duration: 8,
+                duration: 10,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
@@ -345,14 +347,13 @@ export default function Hero() {
                   <div className="col-span-2 rounded-2xl border border-white/10 bg-white/[0.035] p-3.5 sm:p-4">
                     <div className="mb-5 flex items-center justify-between">
                       <div className="h-2.5 w-20 rounded-full bg-white/10 sm:h-3 sm:w-24" />
-
                       <div className="h-2 w-8 rounded-full bg-cyan-300/30 sm:w-10" />
                     </div>
 
                     <div className="flex h-28 items-end gap-1.5 sm:h-36 sm:gap-2">
                       {chartBars.map((height, index) => (
                         <motion.div
-                          key={height + index}
+                          key={`chart-bar-${index}`}
                           initial={{ height: 0 }}
                           animate={{ height: `${height}%` }}
                           transition={{
@@ -399,7 +400,6 @@ export default function Hero() {
                   <div className="col-span-3 rounded-2xl border border-white/10 bg-white/[0.035] p-3.5 sm:p-4">
                     <div className="mb-4 flex items-center justify-between sm:mb-5">
                       <div className="h-2.5 w-24 rounded-full bg-white/10 sm:h-3 sm:w-28" />
-
                       <div className="h-2.5 w-12 rounded-full bg-cyan-300/20 sm:h-3 sm:w-16" />
                     </div>
 
@@ -413,20 +413,17 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* =================================================
-                FLOATING BRAND CARD
-            ================================================= */}
-
+            {/* Floating brand card */}
             <motion.div
               animate={
                 shouldReduceMotion
                   ? undefined
                   : {
-                      y: [0, -10, 0],
+                      y: [0, -7, 0],
                     }
               }
               transition={{
-                duration: 5,
+                duration: 7,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
@@ -460,12 +457,12 @@ export default function Hero() {
                 shouldReduceMotion
                   ? undefined
                   : {
-                      y: [0, -14, 0],
-                      x: [0, 7, 0],
+                      y: [0, -10, 0],
+                      x: [0, 5, 0],
                     }
               }
               transition={{
-                duration: 6,
+                duration: 8,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
@@ -501,6 +498,7 @@ export default function Hero() {
           transition={{
             duration: 1.5,
             repeat: Infinity,
+            ease: "easeInOut",
           }}
           className="h-7 w-px bg-gradient-to-b from-white/40 to-transparent"
         />
