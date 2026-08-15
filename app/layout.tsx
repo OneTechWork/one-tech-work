@@ -51,6 +51,15 @@ export const metadata: Metadata = {
     title: "One Tech Work | Web Development, Mobile Apps & Software",
     description:
       "Professional website development, mobile apps, custom software and UI/UX design solutions by One Tech Work.",
+    url: "https://onetechwork.com",
+    images: [
+      {
+        url: "https://onetechwork.com/images/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "One Tech Work",
+      },
+    ],
   },
 
   twitter: {
@@ -58,16 +67,50 @@ export const metadata: Metadata = {
     title: "One Tech Work | Web Development, Mobile Apps & Software",
     description:
       "Professional website development, mobile apps, custom software and UI/UX design solutions by One Tech Work.",
+    images: ["https://onetechwork.com/images/logo.png"],
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "One Tech Work",
+  url: "https://onetechwork.com",
+  logo: "https://onetechwork.com/images/logo.png",
+
+  description:
+    "One Tech Work provides professional website development, mobile app development, custom software and UI/UX design solutions.",
+
+  email: "officialonetechwork@gmail.com",
+  telephone: "+919424527241",
+
+  sameAs: [
+    "https://www.instagram.com/onetechwork",
+    "https://www.facebook.com/share/1PryPPtESX/",
+    "https://youtube.com/@onetechwork",
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: LayoutProps<"/">) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+      </head>
+
+      <body className="min-h-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }
