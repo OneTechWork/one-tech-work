@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 
 export const metadata: Metadata = {
   title: "Web Development, Mobile Apps & Software",
+
   description:
     "One Tech Work provides professional website development, mobile app development, custom software, UI/UX design and AI-powered digital solutions for businesses and individuals.",
 
@@ -39,10 +39,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return (
-    <>
-      <Navbar />
-      <Hero />
-    </>
-  );
+  return <Hero />;
 }
