@@ -73,8 +73,6 @@ const socialLinks = [
    EXTERNAL LINKS
 ========================================================= */
 
-const loginLink = "https://one-tech-work-app.vercel.app/login";
-const signUpLink = "https://one-tech-work-app.vercel.app/register";
 const whatsappLink = "https://wa.me/919424527241";
 
 /* =========================================================
@@ -103,59 +101,6 @@ export default function Footer() {
       ====================================================== */}
 
       <div className="relative mx-auto max-w-7xl px-5 pb-10 pt-16 sm:px-8 lg:px-10 lg:pt-20">
-        {/* ===================================================
-            TOP CTA
-        ==================================================== */}
-
-        <div className="relative mb-14 overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.025] p-6 shadow-[0_20px_80px_rgba(0,0,0,0.25)] backdrop-blur-xl sm:p-8 lg:p-10">
-          {/* CTA Glow */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute right-[-80px] top-[-100px] h-[260px] w-[260px] rounded-full bg-cyan-400/[0.08] blur-[90px]"
-          />
-
-          <div className="relative flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl">
-              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-300/10 bg-cyan-300/[0.05] px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-cyan-200/80">
-                <span className="h-1.5 w-1.5 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(103,232,249,0.8)]" />
-                Let's Build Something
-              </div>
-
-              <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-4xl">
-                Have an idea?
-                <span className="block bg-gradient-to-r from-cyan-300 via-white to-violet-300 bg-clip-text text-transparent">
-                  Let's turn it into reality.
-                </span>
-              </h2>
-
-              <p className="mt-3 max-w-xl text-sm leading-6 text-white/45 sm:text-[15px]">
-                From websites to digital solutions, we build modern experiences
-                designed to help your business grow.
-              </p>
-            </div>
-
-            <div className="flex shrink-0 flex-col gap-2.5 sm:flex-row">
-              {/* Login */}
-              <a
-                href={loginLink}
-                className="group inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 text-xs font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-300/30 hover:bg-white/[0.08] hover:text-cyan-100"
-              >
-                Login
-              </a>
-
-              {/* Sign Up */}
-              <a
-                href={signUpLink}
-                className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-5 text-xs font-semibold text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-100 hover:shadow-[0_10px_35px_rgba(255,255,255,0.12)]"
-              >
-                Sign Up
-
-                <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* ===================================================
             FOOTER GRID
         ==================================================== */}
@@ -258,6 +203,7 @@ export default function Footer() {
             </h3>
 
             <div className="mt-5 space-y-4">
+              {/* Email */}
               <a
                 href="mailto:contact@onetechwork.com"
                 className="group flex items-start gap-3 text-sm text-white/40 transition-colors duration-300 hover:text-white"
@@ -269,6 +215,7 @@ export default function Footer() {
                 <span className="pt-1">contact@onetechwork.com</span>
               </a>
 
+              {/* WhatsApp */}
               <a
                 href={whatsappLink}
                 target="_blank"
@@ -282,14 +229,13 @@ export default function Footer() {
                 <span className="pt-1">WhatsApp</span>
               </a>
 
+              {/* Location */}
               <div className="flex items-start gap-3 text-sm text-white/40">
                 <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/[0.07] bg-white/[0.025]">
                   <MapPin className="h-3.5 w-3.5 text-violet-300/80" />
                 </span>
 
-                <span className="pt-1">
-                  India
-                </span>
+                <span className="pt-1">India</span>
               </div>
             </div>
           </div>
