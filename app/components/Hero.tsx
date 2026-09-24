@@ -19,7 +19,7 @@ export default function Hero() {
   const fadeUp = {
     initial: {
       opacity: 0,
-      y: shouldReduceMotion ? 0 : 24,
+      y: shouldReduceMotion ? 0 : 20,
     },
     animate: {
       opacity: 1,
@@ -32,10 +32,13 @@ export default function Hero() {
       id="home"
       className="relative min-h-[100dvh] overflow-hidden bg-[#030305] text-white"
     >
-      {/* Background grid */}
+      {/* =====================================================
+          BACKGROUND GRID
+      ====================================================== */}
+
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.065]"
+        className="pointer-events-none absolute inset-0 opacity-[0.055]"
       >
         <div
           className="absolute inset-0"
@@ -44,76 +47,73 @@ export default function Hero() {
               "linear-gradient(rgba(255,255,255,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.35) 1px, transparent 1px)",
             backgroundSize: "64px 64px",
             maskImage:
-              "linear-gradient(to bottom, black 0%, black 65%, transparent 100%)",
+              "linear-gradient(to bottom, black 0%, black 58%, transparent 100%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, black 0%, black 65%, transparent 100%)",
+              "linear-gradient(to bottom, black 0%, black 58%, transparent 100%)",
           }}
         />
       </div>
 
-      {/* Top center glow */}
-      <motion.div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-[-220px] h-[320px] w-[520px] -translate-x-1/2 rounded-full bg-cyan-500/[0.06] blur-[100px] sm:h-[420px] sm:w-[700px] sm:bg-cyan-500/[0.07] sm:blur-[140px]"
-        animate={
-          shouldReduceMotion
-            ? undefined
-            : {
-                scale: [1, 1.08, 1],
-                opacity: [0.5, 0.75, 0.5],
-              }
-        }
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      {/* =====================================================
+          TOP GLOW
+      ====================================================== */}
 
-      {/* Cyan ambient glow */}
-      <motion.div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-40 top-20 h-[300px] w-[300px] rounded-full bg-cyan-500/[0.10] blur-[100px] sm:h-[520px] sm:w-[520px] sm:bg-cyan-500/[0.13] sm:blur-[140px]"
-        animate={
-          shouldReduceMotion
-            ? undefined
-            : {
-                x: [0, 55, 0],
-                y: [0, 30, 0],
-                scale: [1, 1.06, 1],
-              }
-        }
-        transition={{
-          duration: 16,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      {/* Violet ambient glow */}
-      <motion.div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-40 -right-40 h-[320px] w-[320px] rounded-full bg-violet-600/[0.09] blur-[105px] sm:h-[560px] sm:w-[560px] sm:bg-violet-600/[0.12] sm:blur-[150px]"
-        animate={
-          shouldReduceMotion
-            ? undefined
-            : {
-                x: [0, -50, 0],
-                y: [0, -35, 0],
-                scale: [1, 1.08, 1],
-              }
-        }
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      {/* Noise */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.025]"
+        className="pointer-events-none absolute left-1/2 top-[-220px] h-[360px] w-[560px] -translate-x-1/2 rounded-full bg-cyan-500/[0.065] blur-[110px] sm:h-[440px] sm:w-[720px] sm:bg-cyan-500/[0.07] sm:blur-[140px]"
+      />
+
+      {/* =====================================================
+          LEFT CYAN AMBIENT
+      ====================================================== */}
+
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 top-24 h-[300px] w-[300px] rounded-full bg-cyan-500/[0.085] blur-[105px] sm:h-[500px] sm:w-[500px] sm:bg-cyan-500/[0.11] sm:blur-[140px]"
+        animate={
+          shouldReduceMotion
+            ? undefined
+            : {
+                x: [0, 30, 0],
+                y: [0, 18, 0],
+              }
+        }
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      {/* =====================================================
+          RIGHT VIOLET AMBIENT
+      ====================================================== */}
+
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-44 -right-40 h-[320px] w-[320px] rounded-full bg-violet-600/[0.075] blur-[110px] sm:h-[520px] sm:w-[520px] sm:bg-violet-600/[0.10] sm:blur-[150px]"
+        animate={
+          shouldReduceMotion
+            ? undefined
+            : {
+                x: [0, -25, 0],
+                y: [0, -18, 0],
+              }
+        }
+        transition={{
+          duration: 22,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      {/* =====================================================
+          NOISE
+      ====================================================== */}
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.018]"
       >
         <div
           className="h-full w-full"
@@ -124,25 +124,31 @@ export default function Hero() {
         />
       </div>
 
-      {/* Hero content */}
-      <div className="relative z-10 mx-auto flex min-h-[100dvh] w-full max-w-7xl items-center px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:px-12">
+      {/* =====================================================
+          HERO CONTENT
+      ====================================================== */}
+
+      <div className="relative z-10 mx-auto flex min-h-[100dvh] w-full max-w-7xl items-center px-5 pb-20 pt-28 sm:px-8 sm:pb-24 sm:pt-32 lg:px-12">
         <div className="grid w-full items-center gap-14 lg:grid-cols-[1.03fr_0.97fr] lg:gap-16">
-          {/* Left content */}
+          {/* =================================================
+              LEFT CONTENT
+          ================================================== */}
+
           <div className="min-w-0">
             {/* Brand */}
             <motion.div
               initial={fadeUp.initial}
               animate={fadeUp.animate}
-              transition={{ duration: 0.75 }}
+              transition={{ duration: 0.65 }}
               className="mb-7 flex items-center gap-3 sm:mb-9 sm:gap-4"
             >
               <div className="relative shrink-0">
                 <div
                   aria-hidden="true"
-                  className="absolute inset-[-10px] rounded-full bg-cyan-400/10 blur-xl"
+                  className="absolute inset-[-9px] rounded-full bg-cyan-400/[0.08] blur-xl"
                 />
 
-                <div className="relative flex h-[58px] w-[58px] items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-white/[0.045] p-1 shadow-[0_0_40px_rgba(34,211,238,0.10)] backdrop-blur-xl sm:h-[68px] sm:w-[68px]">
+                <div className="relative flex h-[58px] w-[58px] items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-white/[0.045] p-1 shadow-[0_0_35px_rgba(34,211,238,0.08)] backdrop-blur-xl sm:h-[68px] sm:w-[68px]">
                   <Image
                     src="/images/logo.png"
                     alt="One Tech Work logo"
@@ -169,8 +175,8 @@ export default function Hero() {
             <motion.div
               initial={fadeUp.initial}
               animate={fadeUp.animate}
-              transition={{ duration: 0.7, delay: 0.12 }}
-              className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-300/10 bg-white/[0.045] px-3.5 py-2 text-xs text-white/65 shadow-[0_0_30px_rgba(34,211,238,0.04)] backdrop-blur-xl sm:mb-7 sm:px-4 sm:text-sm"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-300/10 bg-white/[0.045] px-3.5 py-2 text-xs text-white/65 shadow-[0_0_25px_rgba(34,211,238,0.035)] backdrop-blur-xl sm:mb-7 sm:px-4 sm:text-sm"
             >
               <Sparkles className="h-3.5 w-3.5 shrink-0 text-cyan-300 sm:h-4 sm:w-4" />
 
@@ -183,7 +189,7 @@ export default function Hero() {
             <motion.h1
               initial={fadeUp.initial}
               animate={fadeUp.animate}
-              transition={{ duration: 0.9, delay: 0.2 }}
+              transition={{ duration: 0.75, delay: 0.18 }}
               className="max-w-4xl text-[46px] font-semibold leading-[0.94] tracking-[-0.055em] sm:text-6xl md:text-7xl lg:text-[78px] xl:text-[84px]"
             >
               We turn your
@@ -196,7 +202,7 @@ export default function Hero() {
             <motion.p
               initial={fadeUp.initial}
               animate={fadeUp.animate}
-              transition={{ duration: 0.8, delay: 0.34 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
               className="mt-6 max-w-2xl text-[15px] leading-7 text-white/50 sm:mt-7 sm:text-lg sm:leading-8"
             >
               We design and build modern websites, mobile apps, custom
@@ -208,13 +214,13 @@ export default function Hero() {
             <motion.div
               initial={fadeUp.initial}
               animate={fadeUp.animate}
-              transition={{ duration: 0.8, delay: 0.46 }}
+              transition={{ duration: 0.7, delay: 0.42 }}
               className="mt-8 grid grid-cols-1 gap-3 sm:flex sm:flex-wrap"
             >
               {/* Primary CTA */}
               <a
                 href="https://one-tech-work-app.vercel.app"
-                className="group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black shadow-[0_10px_40px_rgba(255,255,255,0.08)] transition-all duration-300 hover:scale-[1.025] hover:bg-cyan-100 active:scale-[0.98] sm:px-7"
+                className="group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black shadow-[0_10px_35px_rgba(255,255,255,0.07)] transition-transform duration-300 hover:scale-[1.02] hover:bg-cyan-100 active:scale-[0.98] sm:px-7"
               >
                 Start Your Project
 
@@ -248,7 +254,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.75 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
               className="mt-8 flex items-center gap-3 text-[10px] uppercase tracking-[0.16em] text-white/25 sm:mt-10 sm:text-xs sm:tracking-[0.22em]"
             >
               <span className="h-px w-8 bg-white/15 sm:w-10" />
@@ -257,9 +263,9 @@ export default function Hero() {
 
             {/* Trust points */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.9 }}
+              transition={{ duration: 0.6, delay: 0.82 }}
               className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[11px] text-white/35"
             >
               <span className="flex items-center gap-1.5">
@@ -279,25 +285,28 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right visual */}
+          {/* =================================================
+              RIGHT VISUAL
+          ================================================== */}
+
           <motion.div
             initial={{
               opacity: 0,
-              scale: shouldReduceMotion ? 1 : 0.94,
-              y: shouldReduceMotion ? 0 : 30,
+              scale: shouldReduceMotion ? 1 : 0.96,
+              y: shouldReduceMotion ? 0 : 24,
             }}
             animate={{
               opacity: 1,
               scale: 1,
               y: 0,
             }}
-            transition={{ duration: 1, delay: 0.25 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="relative mx-auto w-full max-w-[480px] sm:max-w-[560px] lg:max-w-none"
           >
             {/* Main glow */}
             <div
               aria-hidden="true"
-              className="absolute left-1/2 top-1/2 h-[60%] w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/[0.07] blur-[80px] sm:h-[65%] sm:w-[65%] sm:bg-cyan-400/[0.08] sm:blur-[100px]"
+              className="pointer-events-none absolute left-1/2 top-1/2 h-[60%] w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/[0.065] blur-[75px] sm:h-[65%] sm:w-[65%] sm:bg-cyan-400/[0.075] sm:blur-[95px]"
             />
 
             {/* Main glass panel */}
@@ -306,15 +315,15 @@ export default function Hero() {
                 shouldReduceMotion
                   ? undefined
                   : {
-                      y: [0, -7, 0],
+                      y: [0, -5, 0],
                     }
               }
               transition={{
-                duration: 10,
+                duration: 12,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative rounded-[26px] border border-white/10 bg-white/[0.045] p-2 shadow-[0_30px_100px_rgba(0,0,0,0.55)] backdrop-blur-2xl sm:rounded-[30px] sm:p-3"
+              className="relative rounded-[26px] border border-white/10 bg-white/[0.045] p-2 shadow-[0_30px_90px_rgba(0,0,0,0.5)] backdrop-blur-2xl sm:rounded-[30px] sm:p-3"
             >
               <div className="rounded-[20px] border border-white/10 bg-[#09090c] p-4 sm:rounded-[24px] sm:p-6">
                 {/* Browser header */}
@@ -344,10 +353,10 @@ export default function Hero() {
                           initial={{ height: 0 }}
                           animate={{ height: `${height}%` }}
                           transition={{
-                            duration: shouldReduceMotion ? 0 : 0.85,
+                            duration: shouldReduceMotion ? 0 : 0.65,
                             delay: shouldReduceMotion
                               ? 0
-                              : 0.75 + index * 0.07,
+                              : 0.6 + index * 0.055,
                             ease: "easeOut",
                           }}
                           className="flex-1 rounded-t-md bg-gradient-to-t from-cyan-500/20 via-cyan-300/50 to-cyan-100/90 sm:rounded-t-lg"
@@ -363,15 +372,15 @@ export default function Hero() {
                     <motion.div
                       initial={{
                         opacity: 0,
-                        scale: shouldReduceMotion ? 1 : 0.8,
+                        scale: shouldReduceMotion ? 1 : 0.85,
                       }}
                       animate={{
                         opacity: 1,
                         scale: 1,
                       }}
                       transition={{
-                        delay: shouldReduceMotion ? 0 : 1,
-                        duration: 0.6,
+                        delay: shouldReduceMotion ? 0 : 0.8,
+                        duration: 0.45,
                       }}
                       className="mt-6 text-2xl font-semibold sm:mt-7 sm:text-3xl"
                     >
@@ -406,11 +415,11 @@ export default function Hero() {
                 shouldReduceMotion
                   ? undefined
                   : {
-                      y: [0, -7, 0],
+                      y: [0, -5, 0],
                     }
               }
               transition={{
-                duration: 7,
+                duration: 10,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
@@ -444,40 +453,54 @@ export default function Hero() {
                 shouldReduceMotion
                   ? undefined
                   : {
-                      y: [0, -10, 0],
-                      x: [0, 5, 0],
+                      y: [0, -7, 0],
                     }
               }
               transition={{
-                duration: 8,
+                duration: 11,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute -right-2 -top-5 h-10 w-10 rounded-full border border-cyan-200/20 bg-cyan-300/10 shadow-[0_0_50px_rgba(34,211,238,0.2)] backdrop-blur-xl sm:-right-5 sm:-top-8 sm:h-14 sm:w-14"
+              className="absolute -right-2 -top-5 h-10 w-10 rounded-full border border-cyan-200/20 bg-cyan-300/10 shadow-[0_0_40px_rgba(34,211,238,0.16)] backdrop-blur-xl sm:-right-5 sm:-top-8 sm:h-14 sm:w-14"
             />
           </motion.div>
         </div>
       </div>
 
-      {/* Bottom fade */}
+      {/* =====================================================
+          FOOTER TRANSITION
+      ====================================================== */}
+
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#030305] via-[#030305]/60 to-transparent sm:h-40"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-b from-transparent via-[#030305]/50 to-[#030305]"
       />
 
-      {/* Scroll indicator */}
+      {/* =====================================================
+          SUBTLE BOTTOM AMBIENT GLOW
+      ====================================================== */}
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-[-120px] left-1/2 h-[220px] w-[620px] -translate-x-1/2 rounded-full bg-cyan-400/[0.025] blur-[100px]"
+      />
+
+      {/* =====================================================
+          SCROLL INDICATOR
+      ====================================================== */}
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 1.35 }}
         className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[9px] uppercase tracking-[0.35em] text-white/25 md:flex"
       >
         <span>Scroll</span>
 
         <motion.span
-          animate={shouldReduceMotion ? undefined : { y: [0, 6, 0] }}
+          animate={shouldReduceMotion ? undefined : { y: [0, 5, 0] }}
           transition={{
-            duration: 1.5,
+            duration: 2,
             repeat: Infinity,
             ease: "easeInOut",
           }}
