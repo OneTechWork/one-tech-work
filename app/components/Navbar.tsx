@@ -68,6 +68,13 @@ const socialLinks = [
 const whatsappLink = "https://wa.me/919424527241";
 
 /* =========================================================
+   AUTH LINKS
+========================================================= */
+
+const loginLink = "https://one-tech-work-app.vercel.app/login";
+const signUpLink = "https://one-tech-work-app.vercel.app/register";
+
+/* =========================================================
    NAVBAR
 ========================================================= */
 
@@ -77,8 +84,6 @@ export default function Navbar() {
 
   /* =======================================================
      SCROLL DETECTION
-     Lightweight: avoids updating React state on every
-     single scroll event.
   ======================================================= */
 
   useEffect(() => {
@@ -162,15 +167,12 @@ export default function Navbar() {
             onClick={closeMobileMenu}
             className="group flex min-w-0 items-center gap-2.5 sm:gap-3"
           >
-            {/* Logo */}
             <div className="relative shrink-0">
-              {/* Glow */}
               <div
                 aria-hidden="true"
                 className="absolute inset-[-8px] rounded-full bg-cyan-400/10 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"
               />
 
-              {/* Logo box */}
               <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white/[0.045] p-1 shadow-[0_0_25px_rgba(34,211,238,0.05)] transition-all duration-500 group-hover:border-cyan-300/20 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.12)] sm:h-11 sm:w-11">
                 <Image
                   src="/images/logo.png"
@@ -183,7 +185,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Brand text */}
             <div className="min-w-0">
               <div className="truncate text-[13px] font-bold tracking-[0.09em] text-white sm:text-[15px]">
                 ONE TECH WORK
@@ -252,15 +253,23 @@ export default function Navbar() {
               <span>WhatsApp</span>
             </a>
 
-            {/* Contact CTA */}
-            <Link
-              href="/contact"
+            {/* Login */}
+            <a
+              href={loginLink}
+              className="group inline-flex h-10 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-4 text-xs font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-300/30 hover:bg-white/[0.08] hover:text-cyan-100"
+            >
+              Login
+            </a>
+
+            {/* Sign Up */}
+            <a
+              href={signUpLink}
               className="group inline-flex h-10 items-center gap-1.5 rounded-full bg-white px-4 text-xs font-semibold text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-100 hover:shadow-[0_8px_30px_rgba(255,255,255,0.12)]"
             >
-              Let's Talk
+              Sign Up
 
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </Link>
+            </a>
           </div>
 
           {/* =================================================
@@ -422,16 +431,28 @@ export default function Navbar() {
                   </a>
                 </div>
 
-                {/* Mobile CTA */}
-                <Link
-                  href="/contact"
-                  onClick={closeMobileMenu}
-                  className="mt-2 flex h-12 items-center justify-center gap-2 rounded-xl bg-white text-sm font-semibold text-black transition-all duration-300 hover:bg-cyan-100"
-                >
-                  Start Your Project
+                {/* Mobile Auth Buttons */}
+                <div className="mt-2 grid grid-cols-2 gap-2">
+                  {/* Login */}
+                  <a
+                    href={loginLink}
+                    onClick={closeMobileMenu}
+                    className="flex h-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-sm font-semibold text-white transition-all duration-300 hover:border-cyan-300/30 hover:bg-white/[0.08] hover:text-cyan-100"
+                  >
+                    Login
+                  </a>
 
-                  <ArrowUpRight className="h-4 w-4" />
-                </Link>
+                  {/* Sign Up */}
+                  <a
+                    href={signUpLink}
+                    onClick={closeMobileMenu}
+                    className="flex h-12 items-center justify-center gap-2 rounded-xl bg-white text-sm font-semibold text-black transition-all duration-300 hover:bg-cyan-100"
+                  >
+                    Sign Up
+
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           )}
