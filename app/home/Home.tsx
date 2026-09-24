@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "../components/Hero";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Web Development, Mobile Apps & Software",
@@ -39,5 +40,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <Footer />
+    </>
+  );
 }
