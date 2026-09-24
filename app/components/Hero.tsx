@@ -32,11 +32,7 @@ export default function Hero() {
       id="home"
       className="relative min-h-[100dvh] overflow-hidden bg-[#030305] text-white"
     >
-      {/* =========================================================
-          BACKGROUND
-      ========================================================= */}
-
-      {/* Subtle grid */}
+      {/* Background grid */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.065]"
@@ -128,16 +124,10 @@ export default function Hero() {
         />
       </div>
 
-      {/* =========================================================
-          HERO CONTENT
-      ========================================================= */}
-
+      {/* Hero content */}
       <div className="relative z-10 mx-auto flex min-h-[100dvh] w-full max-w-7xl items-center px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:px-12">
         <div className="grid w-full items-center gap-14 lg:grid-cols-[1.03fr_0.97fr] lg:gap-16">
-          {/* =====================================================
-              LEFT CONTENT
-          ===================================================== */}
-
+          {/* Left content */}
           <div className="min-w-0">
             {/* Brand */}
             <motion.div
@@ -222,14 +212,14 @@ export default function Hero() {
               className="mt-8 grid grid-cols-1 gap-3 sm:flex sm:flex-wrap"
             >
               {/* Primary CTA */}
-              <Link
-                href="/contact"
+              <a
+                href="https://one-tech-work-app.vercel.app"
                 className="group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black shadow-[0_10px_40px_rgba(255,255,255,0.08)] transition-all duration-300 hover:scale-[1.025] hover:bg-cyan-100 active:scale-[0.98] sm:px-7"
               >
                 Start Your Project
 
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </Link>
+              </a>
 
               {/* Portfolio */}
               <Link
@@ -289,10 +279,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* =====================================================
-              RIGHT VISUAL
-          ===================================================== */}
-
+          {/* Right visual */}
           <motion.div
             initial={{
               opacity: 0,
@@ -472,19 +459,13 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* =========================================================
-          BOTTOM FADE
-      ========================================================= */}
-
+      {/* Bottom fade */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#030305] via-[#030305]/60 to-transparent sm:h-40"
       />
 
-      {/* =========================================================
-          SCROLL INDICATOR
-      ========================================================= */}
-
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
