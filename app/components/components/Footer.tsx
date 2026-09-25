@@ -208,7 +208,7 @@ export default function Footer() {
                 href="mailto:contact@onetechwork.com"
                 className="group flex items-start gap-3 text-sm text-white/40 transition-colors duration-300 hover:text-white"
               >
-                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/[0.07] bg-white/[0.025]">
+                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/[0.07] bg-white/[0.025] transition-colors duration-300 group-hover:border-cyan-300/20">
                   <Mail className="h-3.5 w-3.5 text-cyan-300/80" />
                 </span>
 
@@ -222,7 +222,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="group flex items-start gap-3 text-sm text-white/40 transition-colors duration-300 hover:text-white"
               >
-                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/[0.07] bg-white/[0.025]">
+                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/[0.07] bg-white/[0.025] transition-colors duration-300 group-hover:border-[#25D366]/20">
                   <MessageCircle className="h-3.5 w-3.5 text-[#25D366]" />
                 </span>
 
@@ -252,18 +252,22 @@ export default function Footer() {
             </p>
 
             <div className="flex items-center gap-5">
+              {/* Privacy Policy */}
               <Link
-                href="/privacy"
-                className="text-[11px] text-white/25 transition-colors duration-300 hover:text-white/60"
+                href="/privacy-policy"
+                className="group inline-flex items-center gap-1 text-[11px] text-white/30 transition-colors duration-300 hover:text-cyan-200"
               >
                 Privacy Policy
+                <ArrowUpRight className="h-3 w-3 opacity-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
               </Link>
 
+              {/* Terms */}
               <Link
                 href="/terms"
-                className="text-[11px] text-white/25 transition-colors duration-300 hover:text-white/60"
+                className="group inline-flex items-center gap-1 text-[11px] text-white/30 transition-colors duration-300 hover:text-white/70"
               >
                 Terms
+                <ArrowUpRight className="h-3 w-3 opacity-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
               </Link>
             </div>
           </div>
