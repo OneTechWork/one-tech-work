@@ -22,45 +22,40 @@ const socialLinks = [
     name: "Facebook",
     href: "https://www.facebook.com/share/1PryPPtESX/",
     icon: FaFacebookF,
-    color: "text-[#1877F2]",
-    hover:
-      "hover:border-[#1877F2]/40 hover:bg-[#1877F2]/10 hover:shadow-[0_0_30px_rgba(24,119,242,0.18)]",
+    className:
+      "text-[#1877F2] hover:border-[#1877F2]/40 hover:bg-[#1877F2]/10 hover:shadow-[0_0_28px_rgba(24,119,242,0.18)]",
   },
   {
     name: "Instagram",
     href: "https://www.instagram.com/onetechwork",
     icon: FaInstagram,
-    color: "text-[#E4405F]",
-    hover:
-      "hover:border-[#E4405F]/40 hover:bg-[#E4405F]/10 hover:shadow-[0_0_30px_rgba(228,64,95,0.18)]",
+    className:
+      "text-[#E4405F] hover:border-[#E4405F]/40 hover:bg-[#E4405F]/10 hover:shadow-[0_0_28px_rgba(228,64,95,0.18)]",
   },
   {
     name: "YouTube",
     href: "https://youtube.com/@onetechwork",
     icon: FaYoutube,
-    color: "text-[#FF0000]",
-    hover:
-      "hover:border-[#FF0000]/40 hover:bg-[#FF0000]/10 hover:shadow-[0_0_30px_rgba(255,0,0,0.18)]",
+    className:
+      "text-[#FF0000] hover:border-[#FF0000]/40 hover:bg-[#FF0000]/10 hover:shadow-[0_0_28px_rgba(255,0,0,0.18)]",
   },
   {
     name: "X",
     href: "https://x.com/OneTechWork",
     icon: FaXTwitter,
-    color: "text-white",
-    hover:
-      "hover:border-white/25 hover:bg-white/[0.06] hover:shadow-[0_0_30px_rgba(255,255,255,0.10)]",
+    className:
+      "text-white hover:border-white/25 hover:bg-white/[0.06] hover:shadow-[0_0_28px_rgba(255,255,255,0.10)]",
   },
   {
     name: "WhatsApp",
     href: "https://wa.me/919424527241",
     icon: FaWhatsapp,
-    color: "text-[#25D366]",
-    hover:
-      "hover:border-[#25D366]/40 hover:bg-[#25D366]/10 hover:shadow-[0_0_30px_rgba(37,211,102,0.18)]",
+    className:
+      "text-[#25D366] hover:border-[#25D366]/40 hover:bg-[#25D366]/10 hover:shadow-[0_0_28px_rgba(37,211,102,0.18)]",
   },
 ];
 
-const columns = [
+const footerSections = [
   {
     title: "What We Do",
     links: [
@@ -101,25 +96,25 @@ const columns = [
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/[0.07] bg-[#030305]">
-      {/* Background Glow */}
+      {/* Background Glows */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 h-[450px] w-[750px] -translate-x-1/2 rounded-full bg-cyan-400/[0.045] blur-[140px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[700px] -translate-x-1/2 rounded-full bg-cyan-400/[0.045] blur-[130px]"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 right-0 h-[350px] w-[350px] rounded-full bg-violet-500/[0.035] blur-[130px]"
+        className="pointer-events-none absolute bottom-0 right-0 h-[320px] w-[320px] rounded-full bg-violet-500/[0.035] blur-[120px]"
       />
 
-      <div className="relative mx-auto max-w-7xl px-5 pb-8 pt-14 sm:px-8 lg:px-10 lg:pt-18">
+      <div className="relative mx-auto max-w-5xl px-5 pb-8 pt-14 sm:px-8 lg:pt-16">
         {/* Brand */}
         <div className="flex flex-col items-center text-center">
           <Link
             href="/"
-            className="group inline-flex items-center gap-3 transition-all duration-500"
+            className="group inline-flex items-center gap-3"
           >
-            <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white/[0.045] p-1 shadow-[0_0_25px_rgba(34,211,238,0.05)] transition-all duration-500 group-hover:scale-105 group-hover:border-cyan-300/25 group-hover:shadow-[0_0_35px_rgba(34,211,238,0.15)]">
+            <div className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white/[0.045] p-1 shadow-[0_0_25px_rgba(34,211,238,0.05)] transition-all duration-500 ease-out group-hover:scale-105 group-hover:border-cyan-300/25 group-hover:shadow-[0_0_35px_rgba(34,211,238,0.15)]">
               <img
                 src="/images/logo.png"
                 alt="One Tech Work"
@@ -128,7 +123,7 @@ export default function Footer() {
             </div>
 
             <div className="text-left">
-              <div className="text-[16px] font-bold tracking-[0.09em] text-white">
+              <div className="text-[15px] font-bold tracking-[0.09em] text-white">
                 ONE TECH WORK
               </div>
 
@@ -144,7 +139,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Social Media */}
+        {/* Social Icons */}
         <div className="mt-8 flex items-center justify-center gap-2.5">
           {socialLinks.map((social) => {
             const Icon = social.icon;
@@ -157,30 +152,42 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label={social.name}
                 title={social.name}
-                className={`group flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.025] transition-all duration-500 ease-out hover:-translate-y-1 ${social.hover}`}
+                className={`group flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.025] transition-all duration-500 ease-out hover:-translate-y-1 ${social.className}`}
               >
-                <Icon
-                  className={`h-[17px] w-[17px] transition-all duration-500 ease-out group-hover:scale-110 ${social.color}`}
-                />
+                <Icon className="h-[17px] w-[17px] transition-transform duration-500 ease-out group-hover:scale-110" />
               </a>
             );
           })}
         </div>
 
-        {/* Footer Links Matrix */}
-        <div className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-x-16 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-12 lg:gap-y-14">
-          {columns.map((column) => (
-            <div key={column.title}>
+        {/* 2 × 2 Matrix */}
+        <div className="mx-auto mt-14 grid max-w-4xl grid-cols-1 sm:grid-cols-2">
+          {footerSections.map((section, index) => (
+            <div
+              key={section.title}
+              className={[
+                "px-5 py-7 sm:px-8",
+                index === 0
+                  ? "border-b border-white/[0.07] sm:border-r"
+                  : "",
+                index === 1
+                  ? "border-b border-white/[0.07]"
+                  : "",
+                index === 2
+                  ? "border-b border-white/[0.07] sm:border-b-0 sm:border-r"
+                  : "",
+              ].join(" ")}
+            >
               <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/45">
-                {column.title}
+                {section.title}
               </h3>
 
               <div className="mt-5 space-y-3.5">
-                {column.links.map((link) => (
+                {section.links.map((link) => (
                   <Link
-                    key={`${column.title}-${link.name}`}
+                    key={`${section.title}-${link.name}`}
                     href={link.href}
-                    className="group flex w-fit items-center gap-1.5 text-[14px] text-white/55 transition-all duration-300 ease-out hover:translate-x-1 hover:text-white"
+                    className="group flex w-fit items-center gap-1.5 text-sm text-white/50 transition-all duration-300 ease-out hover:translate-x-1 hover:text-white"
                   >
                     <span>{link.name}</span>
 
@@ -192,42 +199,37 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Contact Strip */}
-        <div className="mx-auto mt-14 max-w-5xl border-t border-white/[0.07] pt-8 lg:mt-16">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
-              {/* Email */}
-              <a
-                href="mailto:contact@onetechwork.com"
-                className="group flex items-center gap-2.5 text-sm text-white/40 transition-all duration-300 hover:text-white"
-              >
-                <Mail className="h-4 w-4 text-cyan-300/70 transition-transform duration-300 group-hover:scale-110" />
-                <span>contact@onetechwork.com</span>
-              </a>
+        {/* Contact */}
+        <div className="mt-10 border-t border-white/[0.07] pt-7">
+          <div className="flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:gap-7">
+            <a
+              href="mailto:contact@onetechwork.com"
+              className="group flex items-center gap-2.5 text-sm text-white/40 transition-all duration-300 hover:text-white"
+            >
+              <Mail className="h-4 w-4 text-cyan-300/70 transition-transform duration-300 group-hover:scale-110" />
+              <span>contact@onetechwork.com</span>
+            </a>
 
-              {/* WhatsApp */}
-              <a
-                href="https://wa.me/919424527241"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2.5 text-sm text-white/40 transition-all duration-300 hover:text-white"
-              >
-                <MessageCircle className="h-4 w-4 text-[#25D366] transition-transform duration-300 group-hover:scale-110" />
-                <span>WhatsApp</span>
-              </a>
+            <a
+              href="https://wa.me/919424527241"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2.5 text-sm text-white/40 transition-all duration-300 hover:text-white"
+            >
+              <MessageCircle className="h-4 w-4 text-[#25D366] transition-transform duration-300 group-hover:scale-110" />
+              <span>WhatsApp</span>
+            </a>
 
-              {/* Location */}
-              <div className="flex items-center gap-2.5 text-sm text-white/40">
-                <MapPin className="h-4 w-4 text-violet-300/70" />
-                <span>India</span>
-              </div>
+            <div className="flex items-center gap-2.5 text-sm text-white/40">
+              <MapPin className="h-4 w-4 text-violet-300/70" />
+              <span>India</span>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 border-t border-white/[0.07] pt-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-7 border-t border-white/[0.07] pt-6">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-[11px] text-white/25">
               © {new Date().getFullYear()} One Tech Work. All rights reserved.
             </p>
