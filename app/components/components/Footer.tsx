@@ -13,6 +13,7 @@ import {
   FaInstagram,
   FaYoutube,
   FaWhatsapp,
+  FaRedditAlien,
 } from "react-icons/fa";
 
 import { FaXTwitter } from "react-icons/fa6";
@@ -52,6 +53,13 @@ const socialLinks = [
     icon: FaWhatsapp,
     className:
       "text-[#25D366] hover:border-[#25D366]/40 hover:bg-[#25D366]/10 hover:shadow-[0_0_28px_rgba(37,211,102,0.18)]",
+  },
+  {
+    name: "Reddit",
+    href: "https://www.reddit.com/u/onetechwork/s/ugBORByGcu",
+    icon: FaRedditAlien,
+    className:
+      "text-[#FF4500] hover:border-[#FF4500]/40 hover:bg-[#FF4500]/10 hover:shadow-[0_0_28px_rgba(255,69,0,0.18)]",
   },
 ];
 
@@ -114,7 +122,7 @@ export default function Footer() {
             href="/"
             className="group inline-flex items-center gap-3"
           >
-            <div className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white/[0.045] p-1 shadow-[0_0_25px_rgba(34,211,238,0.05)] transition-all duration-500 ease-out group-hover:scale-105 group-hover:border-cyan-300/25 group-hover:shadow-[0_0_35px_rgba(34,211,238,0.15)]">
+            <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] p-1.5 shadow-[0_0_30px_rgba(34,211,238,0.06)] transition-all duration-500 ease-out group-hover:scale-105 group-hover:border-cyan-300/25 group-hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]">
               <img
                 src="/images/logo.png"
                 alt="One Tech Work"
@@ -140,7 +148,7 @@ export default function Footer() {
         </div>
 
         {/* Social Icons */}
-        <div className="mt-8 flex items-center justify-center gap-2.5">
+        <div className="mt-8 flex items-center justify-center gap-2 sm:gap-2.5">
           {socialLinks.map((social) => {
             const Icon = social.icon;
 
@@ -152,9 +160,9 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label={social.name}
                 title={social.name}
-                className={`group flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.025] transition-all duration-500 ease-out hover:-translate-y-1 ${social.className}`}
+                className={`group flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.025] transition-all duration-500 ease-out hover:-translate-y-1 sm:h-11 sm:w-11 ${social.className}`}
               >
-                <Icon className="h-[17px] w-[17px] transition-transform duration-500 ease-out group-hover:scale-110" />
+                <Icon className="h-4 w-4 transition-transform duration-500 ease-out group-hover:scale-110 sm:h-[17px] sm:w-[17px]" />
               </a>
             );
           })}
@@ -191,7 +199,7 @@ export default function Footer() {
                   >
                     <span>{link.name}</span>
 
-                    <ArrowUpRight className="h-3 w-3 -translate-x-1 -translate-y-1 shrink-0 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 sm:h-3.5 sm:w-3.5" />
+                    <ArrowUpRight className="h-3 w-3 shrink-0 -translate-x-1 -translate-y-1 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 sm:h-3.5 sm:w-3.5" />
                   </Link>
                 ))}
               </div>
