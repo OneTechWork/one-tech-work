@@ -14,10 +14,6 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
 const quickLinks = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
@@ -27,20 +23,12 @@ const quickLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
-/* =========================================================
-   SERVICES
-========================================================= */
-
 const services = [
   "Web Development",
   "App Development",
   "UI / UX Design",
   "Digital Solutions",
 ];
-
-/* =========================================================
-   SOCIAL LINKS
-========================================================= */
 
 const socialLinks = [
   {
@@ -69,23 +57,12 @@ const socialLinks = [
   },
 ];
 
-/* =========================================================
-   EXTERNAL LINKS
-========================================================= */
-
 const whatsappLink = "https://wa.me/919424527241";
-
-/* =========================================================
-   FOOTER
-========================================================= */
 
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/[0.07] bg-[#030305]">
-      {/* =====================================================
-          BACKGROUND GLOW
-      ====================================================== */}
-
+      {/* Background Glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[700px] -translate-x-1/2 rounded-full bg-cyan-400/[0.045] blur-[130px]"
@@ -96,15 +73,9 @@ export default function Footer() {
         className="pointer-events-none absolute bottom-0 left-0 h-[300px] w-[350px] rounded-full bg-violet-500/[0.035] blur-[120px]"
       />
 
-      {/* =====================================================
-          MAIN FOOTER
-      ====================================================== */}
-
+      {/* Main Footer */}
       <div className="relative mx-auto max-w-7xl px-5 pb-10 pt-16 sm:px-8 lg:px-10 lg:pt-20">
-        {/* ===================================================
-            FOOTER GRID
-        ==================================================== */}
-
+        {/* Footer Grid */}
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr] lg:gap-10">
           {/* Brand */}
           <div>
@@ -241,10 +212,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ===================================================
-            BOTTOM BAR
-        ==================================================== */}
-
+        {/* Bottom Bar */}
         <div className="mt-14 border-t border-white/[0.07] pt-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-[11px] text-white/25">
@@ -255,18 +223,20 @@ export default function Footer() {
               {/* Privacy Policy */}
               <Link
                 href="/privacy-policy"
-                className="group inline-flex items-center gap-1 text-[11px] text-white/30 transition-colors duration-300 hover:text-cyan-200"
+                className="group inline-flex items-center gap-1 text-[11px] font-medium text-cyan-300/80 transition-all duration-300 hover:text-cyan-200 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.65)]"
               >
                 Privacy Policy
-                <ArrowUpRight className="h-3 w-3 opacity-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
+
+                <ArrowUpRight className="h-3 w-3 opacity-70 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
               </Link>
 
               {/* Terms */}
               <Link
                 href="/terms"
-                className="group inline-flex items-center gap-1 text-[11px] text-white/30 transition-colors duration-300 hover:text-white/70"
+                className="group inline-flex items-center gap-1 text-[11px] text-white/30 transition-all duration-300 hover:text-white/70"
               >
                 Terms
+
                 <ArrowUpRight className="h-3 w-3 opacity-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
               </Link>
             </div>
