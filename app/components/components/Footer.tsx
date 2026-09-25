@@ -230,14 +230,14 @@ export default function Footer() {
                 <ArrowUpRight className="h-3 w-3 opacity-70 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
               </Link>
 
-              {/* Terms */}
+              {/* Terms & Conditions */}
               <Link
                 href="/terms"
-                className="group inline-flex items-center gap-1 text-[11px] text-white/30 transition-all duration-300 hover:text-white/70"
+                className="group inline-flex items-center gap-1 text-[11px] font-medium text-cyan-300/80 transition-all duration-300 hover:text-cyan-200 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.65)]"
               >
-                Terms
+                Terms &amp; Conditions
 
-                <ArrowUpRight className="h-3 w-3 opacity-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
+                <ArrowUpRight className="h-3 w-3 opacity-70 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
               </Link>
             </div>
           </div>
