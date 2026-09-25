@@ -27,7 +27,7 @@ export default function ConsentPopup() {
   };
 
   const handleReject = () => {
-    window.location.replace("about:blank");
+    window.location.replace("https://www.google.com");
   };
 
   if (status === "loading" || status === "accepted") {
