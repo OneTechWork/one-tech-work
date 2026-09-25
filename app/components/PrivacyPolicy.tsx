@@ -1,7 +1,14 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import {
+  ArrowUpRight,
+  Check,
+  FileText,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 
 const sections = [
   {
@@ -10,6 +17,7 @@ const sections = [
     body: (
       <>
         <p>This Privacy Policy applies to information collected through:</p>
+
         <ul>
           <li>The One Tech Work website</li>
           <li>The One Tech Work App</li>
@@ -21,14 +29,16 @@ const sections = [
           <li>Our website analytics and related technologies</li>
           <li>Other services or interactions operated by One Tech Work</li>
         </ul>
+
         <p>
-          This Privacy Policy does not necessarily apply to third-party websites
-          or services that may be accessible through links on our website or
-          App.
+          This Privacy Policy does not necessarily apply to third-party
+          websites or services that may be accessible through links on our
+          website or App.
         </p>
       </>
     ),
   },
+
   {
     number: "02",
     title: "Information We Collect",
@@ -55,12 +65,13 @@ const sections = [
         </ul>
 
         <p>
-          This information is used to create, maintain, authenticate, and secure
-          your account.
+          This information is used to create, maintain, authenticate, and
+          secure your account.
         </p>
       </>
     ),
   },
+
   {
     number: "03",
     title: "Project Information",
@@ -95,6 +106,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "04",
     title: "Messages and Conversations",
@@ -126,6 +138,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "05",
     title: "Notifications",
@@ -154,6 +167,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "06",
     title: "Website Contact and Inquiry Information",
@@ -184,6 +198,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "07",
     title: "Information Collected Automatically",
@@ -216,6 +231,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "08",
     title: "Information We Currently Do Not Collect Through the App",
@@ -238,6 +254,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "09",
     title: "How We Use Your Information",
@@ -275,6 +292,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "10",
     title: "Cookies and Similar Technologies",
@@ -306,6 +324,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "11",
     title: "Google Analytics and Website Analytics",
@@ -341,6 +360,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "12",
     title: "Supabase and Data Storage",
@@ -377,6 +397,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "13",
     title: "How We Store and Protect Your Information",
@@ -413,6 +434,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "14",
     title: "Who Can Access Your Information",
@@ -447,6 +469,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "15",
     title: "Third-Party Services",
@@ -478,6 +501,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "16",
     title: "Communications",
@@ -512,6 +536,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "17",
     title: "WhatsApp and Social Media",
@@ -542,6 +567,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "18",
     title: "External Websites",
@@ -571,6 +597,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "19",
     title: "Data Retention",
@@ -601,6 +628,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "20",
     title: "Your Privacy Rights",
@@ -638,6 +666,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "21",
     title: "Account Deletion",
@@ -649,12 +678,18 @@ const sections = [
           contact us.
         </p>
 
-        <p>
-          <strong>Email:</strong>{" "}
-          <a href="mailto:officialonetechwork@gmail.com">
-            officialonetechwork@gmail.com
-          </a>
-        </p>
+        <div className="contact-box">
+          <div className="contact-icon">
+            <ShieldCheck className="h-5 w-5" />
+          </div>
+
+          <div>
+            <span>Email</span>
+            <a href="mailto:officialonetechwork@gmail.com">
+              officialonetechwork@gmail.com
+            </a>
+          </div>
+        </div>
 
         <p>
           We may request information necessary to verify your identity before
@@ -669,6 +704,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "22",
     title: "Children's Privacy",
@@ -691,6 +727,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "23",
     title: "International Data Processing",
@@ -710,6 +747,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "24",
     title: "No Sale of Personal Information",
@@ -725,6 +763,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "25",
     title: "Changes to This Privacy Policy",
@@ -755,6 +794,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "26",
     title: "Contact Us",
@@ -765,20 +805,26 @@ const sections = [
           this Privacy Policy or your personal information, please contact us.
         </p>
 
-        <div className="contact-details">
-          <strong>One Tech Work</strong>
+        <div className="contact-box">
+          <div className="contact-icon">
+            <FileText className="h-5 w-5" />
+          </div>
 
-          <a
-            href="https://onetechwork.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            onetechwork.com
-          </a>
+          <div className="contact-content">
+            <strong>One Tech Work</strong>
 
-          <a href="mailto:officialonetechwork@gmail.com">
-            officialonetechwork@gmail.com
-          </a>
+            <a
+              href="https://onetechwork.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              onetechwork.com
+            </a>
+
+            <a href="mailto:officialonetechwork@gmail.com">
+              officialonetechwork@gmail.com
+            </a>
+          </div>
         </div>
 
         <p>
@@ -788,6 +834,7 @@ const sections = [
       </>
     ),
   },
+
   {
     number: "27",
     title: "Acceptance",
@@ -809,637 +856,435 @@ const sections = [
   },
 ];
 
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 35,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 export default function PrivacyPolicy() {
-  const [activeSection, setActiveSection] = useState("01");
-
-  useEffect(() => {
-    const elements = sections
-      .map(({ number }) => document.getElementById(`privacy-${number}`))
-      .filter(Boolean) as HTMLElement[];
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-
-        if (visible[0]) {
-          setActiveSection(visible[0].target.id.replace("privacy-", ""));
-        }
-      },
-      {
-        rootMargin: "-15% 0px -70% 0px",
-        threshold: 0,
-      },
-    );
-
-    elements.forEach((element) => observer.observe(element));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <main className="privacy-page">
-      <section className="privacy-hero">
-        <div className="hero-orb hero-orb-one" />
-        <div className="hero-orb hero-orb-two" />
+    <main className="relative min-h-screen overflow-hidden bg-[#030305] text-white">
+      {/* ================= BACKGROUND ================= */}
 
-        <div className="privacy-container">
-          <div className="eyebrow">
-            <span>LEGAL</span>
-            <i />
-            <span>01</span>
-          </div>
+      <div className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute inset-0 opacity-[0.045]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.35) 1px, transparent 1px)",
+            backgroundSize: "70px 70px",
+          }}
+        />
 
-          <h1>
+        <motion.div
+          animate={{
+            x: [0, 80, 0],
+            y: [0, 50, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute -left-48 top-32 h-[450px] w-[450px] rounded-full bg-cyan-500/10 blur-[140px]"
+        />
+
+        <motion.div
+          animate={{
+            x: [0, -70, 0],
+            y: [0, -50, 0],
+            scale: [1, 1.15, 1],
+          }}
+          transition={{
+            duration: 14,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute -right-48 top-[35%] h-[500px] w-[500px] rounded-full bg-violet-600/10 blur-[150px]"
+        />
+
+        <motion.div
+          animate={{
+            x: [0, 45, 0],
+            opacity: [0.06, 0.12, 0.06],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute left-1/2 top-[70%] h-[350px] w-[350px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[130px]"
+        />
+      </div>
+
+      {/* ================= HERO ================= */}
+
+      <section className="relative z-10 px-5 pb-20 pt-36 sm:px-8 sm:pt-40 lg:px-12 lg:pb-28">
+        <div className="mx-auto max-w-7xl">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium text-white/60 backdrop-blur-xl sm:text-sm"
+          >
+            <Sparkles className="h-4 w-4 text-cyan-300" />
+            <span>Privacy & Security</span>
+          </motion.div>
+
+          <motion.h1
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.08 }}
+            className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] sm:text-6xl md:text-7xl lg:text-[92px]"
+          >
             Privacy
-            <br />
-            <span>Policy.</span>
-          </h1>
+            <span className="block bg-gradient-to-r from-white via-cyan-200 to-violet-300 bg-clip-text text-transparent">
+              Policy.
+            </span>
+          </motion.h1>
 
-          <p className="hero-description">
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.18 }}
+            className="mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg sm:leading-8"
+          >
             How One Tech Work collects, uses, protects, and manages information
             across our website, application, and services.
-          </p>
+          </motion.p>
 
-          <div className="hero-meta">
-            <div>
-              <span>LAST UPDATED</span>
-              <strong>September 25, 2026</strong>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.28 }}
+            className="mt-10 grid max-w-3xl gap-3 sm:grid-cols-2"
+          >
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.035] px-5 py-4 backdrop-blur-xl">
+              <span className="block text-[10px] font-medium uppercase tracking-[0.2em] text-white/30">
+                Last Updated
+              </span>
+
+              <strong className="mt-2 block text-sm font-medium text-white/75">
+                September 25, 2026
+              </strong>
             </div>
 
-            <div>
-              <span>WEBSITE</span>
-              <strong>onetechwork.com</strong>
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.035] px-5 py-4 backdrop-blur-xl">
+              <span className="block text-[10px] font-medium uppercase tracking-[0.2em] text-white/30">
+                Website
+              </span>
+
+              <strong className="mt-2 block text-sm font-medium text-white/75">
+                onetechwork.com
+              </strong>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className="privacy-main">
-        <div className="privacy-container privacy-grid">
-          <aside className="privacy-index">
-            <div className="index-title">CONTENTS</div>
+      {/* ================= DOCUMENT ================= */}
 
-            <nav aria-label="Privacy Policy sections">
-              {sections.map((section) => (
-                <a
-                  key={section.number}
-                  href={`#privacy-${section.number}`}
-                  className={activeSection === section.number ? "active" : ""}
-                >
-                  <span>{section.number}</span>
-                  <span>{section.title}</span>
-                </a>
-              ))}
-            </nav>
-          </aside>
+      <section className="relative z-10 px-5 pb-24 sm:px-8 lg:px-12 lg:pb-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-12">
+            {/* CONTENTS */}
 
-          <div className="privacy-document">
-            <div className="document-intro">
-              <span>ONE TECH WORK</span>
+            <aside className="hidden lg:block">
+              <div className="sticky top-28">
+                <div className="mb-5 text-[10px] font-medium uppercase tracking-[0.25em] text-white/30">
+                  Contents
+                </div>
 
-              <p>
-                We believe privacy should be clear, transparent, and easy to
-                understand. The following policy explains the information we
-                handle when you interact with One Tech Work.
-              </p>
-            </div>
+                <div className="space-y-1">
+                  {sections.map((section) => (
+                    <a
+                      key={section.number}
+                      href={`#privacy-${section.number}`}
+                      className="group flex items-start gap-3 rounded-lg px-2 py-1.5 text-[10px] leading-4 text-white/25 transition-all duration-300 hover:bg-white/[0.035] hover:text-white/75"
+                    >
+                      <span className="shrink-0 text-cyan-300/35 transition-colors group-hover:text-cyan-300">
+                        {section.number}
+                      </span>
 
-            {sections.map((section) => (
-              <article
-                key={section.number}
-                id={`privacy-${section.number}`}
-                className="privacy-section"
+                      <span>{section.title}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </aside>
+
+            {/* DOCUMENT */}
+
+            <div className="min-w-0">
+              {/* Intro */}
+
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="mb-10 rounded-[26px] border border-white/[0.08] bg-white/[0.035] p-6 backdrop-blur-xl sm:p-8"
               >
-                <div className="section-marker">
-                  <span>{section.number}</span>
+                <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-cyan-300/70">
+                  <ShieldCheck className="h-4 w-4" />
+                  One Tech Work
                 </div>
 
-                <div className="section-copy">
-                  <h2>{section.title}</h2>
+                <p className="mt-5 max-w-3xl text-sm leading-7 text-white/45 sm:text-base sm:leading-8">
+                  We believe privacy should be clear, transparent, and easy to
+                  understand. The following policy explains the information we
+                  handle when you interact with One Tech Work.
+                </p>
+              </motion.div>
 
-                  <div className="section-body">{section.body}</div>
+              {/* Sections */}
+
+              <div className="space-y-4">
+                {sections.map((section, index) => (
+                  <motion.article
+                    key={section.number}
+                    id={`privacy-${section.number}`}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.08 }}
+                    transition={{
+                      delay: Math.min(index * 0.015, 0.12),
+                    }}
+                    className="group relative scroll-mt-24 overflow-hidden rounded-[26px] border border-white/[0.08] bg-white/[0.025] p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.14] hover:bg-white/[0.04] sm:p-8 lg:p-9"
+                  >
+                    {/* Hover glow */}
+
+                    <div className="pointer-events-none absolute -right-24 -top-24 h-48 w-48 rounded-full bg-gradient-to-br from-cyan-400 to-violet-600 opacity-0 blur-[90px] transition-opacity duration-500 group-hover:opacity-15" />
+
+                    {/* Top line */}
+
+                    <div className="relative flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05]">
+                          <Check className="h-4 w-4 text-cyan-300" />
+                        </div>
+
+                        <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/25">
+                          Privacy Policy
+                        </span>
+                      </div>
+
+                      <span className="text-xs font-medium tracking-[0.2em] text-white/20">
+                        {section.number}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+
+                    <h2 className="relative mt-7 max-w-4xl text-2xl font-semibold tracking-[-0.035em] text-white/90 sm:text-3xl md:text-4xl">
+                      {section.title}
+                    </h2>
+
+                    {/* Divider */}
+
+                    <div className="relative mt-6 h-px w-full overflow-hidden bg-white/[0.07]">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "100%" }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.9,
+                          delay: 0.15,
+                          ease: "easeOut",
+                        }}
+                        className="h-full bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-500"
+                      />
+                    </div>
+
+                    {/* Body */}
+
+                    <div className="section-body relative mt-7 max-w-4xl text-sm leading-7 text-white/45 sm:text-[15px] sm:leading-8">
+                      {section.body}
+                    </div>
+                  </motion.article>
+                ))}
+              </div>
+
+              {/* ================= FINAL CTA ================= */}
+
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="relative mt-6 overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.035] px-6 py-12 text-center backdrop-blur-xl sm:px-10 sm:py-16"
+              >
+                <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-[110px]" />
+
+                <div className="relative z-10">
+                  <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-cyan-300/70">
+                    One Tech Work
+                  </p>
+
+                  <h2 className="mx-auto max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+                    One vision.
+                    <span className="block bg-gradient-to-r from-cyan-200 to-violet-300 bg-clip-text text-transparent">
+                      One solution.
+                    </span>
+                  </h2>
+
+                  <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-white/40 sm:text-base">
+                    Clear technology. Responsible handling. Built for the
+                    future.
+                  </p>
+
+                  <Link
+                    href="/"
+                    className="group mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:scale-[1.03] hover:bg-cyan-100"
+                  >
+                    Back to Home
+
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </Link>
                 </div>
-              </article>
-            ))}
-
-            <div className="privacy-end">
-              <span>ONE TECH WORK</span>
-
-              <h2>
-                One Vision.
-                <br />
-                One Solution.
-                <br />
-                One Future.
-              </h2>
-
-              <Link href="/" className="home-link">
-                Back to Home
-                <span>↗</span>
-              </Link>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      <style jsx>
-        {`
-          .privacy-page {
-            --privacy-bg: #050505;
-            --privacy-text: #f5f5f5;
-            --privacy-muted: rgba(245, 245, 245, 0.56);
-            --privacy-soft: rgba(245, 245, 245, 0.34);
-            --privacy-border: rgba(245, 245, 245, 0.09);
-            --privacy-purple: #8b6cff;
+      {/* Bottom fade */}
 
-            min-height: 100vh;
-            background: var(--privacy-bg);
-            color: var(--privacy-text);
-            overflow: hidden;
-          }
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#030305] to-transparent" />
 
-          .privacy-container {
-            width: min(1240px, calc(100% - 64px));
-            margin: 0 auto;
-          }
+      {/* ================= CUSTOM BODY STYLES ================= */}
 
-          .privacy-hero {
-            position: relative;
-            min-height: 650px;
-            display: flex;
-            align-items: center;
-            padding: 140px 0 110px;
-            overflow: hidden;
-            border-bottom: 1px solid var(--privacy-border);
-          }
+      <style jsx global>{`
+        html {
+          scroll-behavior: smooth;
+        }
 
-          .hero-orb {
-            position: absolute;
-            width: 620px;
-            height: 620px;
-            border-radius: 50%;
-            pointer-events: none;
-            filter: blur(130px);
-            opacity: 0.13;
-          }
+        .section-body p {
+          margin: 0 0 20px;
+        }
 
-          .hero-orb-one {
-            top: -390px;
-            right: -120px;
-            background: #7047ff;
-          }
+        .section-body p:last-child {
+          margin-bottom: 0;
+        }
 
-          .hero-orb-two {
-            left: -420px;
-            bottom: -480px;
-            background: #3159ff;
-          }
+        .section-body ul {
+          margin: 0 0 22px;
+          padding-left: 20px;
+        }
 
-          .eyebrow {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            margin-bottom: 38px;
-            color: rgba(255, 255, 255, 0.45);
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 0.22em;
-            animation: privacyFadeUp 700ms ease both;
-          }
+        .section-body li {
+          margin: 7px 0;
+          padding-left: 5px;
+        }
 
-          .eyebrow i {
-            width: 42px;
-            height: 1px;
-            display: block;
-            background: rgba(255, 255, 255, 0.2);
-          }
+        .section-body li::marker {
+          color: rgba(103, 232, 249, 0.75);
+        }
 
-          .privacy-hero h1 {
-            position: relative;
-            margin: 0;
-            max-width: 950px;
-            font-size: clamp(72px, 11vw, 148px);
-            line-height: 0.84;
-            letter-spacing: -0.075em;
-            font-weight: 500;
-            animation: privacyFadeUp 800ms 80ms ease both;
-          }
+        .section-body h3 {
+          margin: 34px 0 15px;
+          color: rgba(255, 255, 255, 0.82);
+          font-size: 17px;
+          font-weight: 600;
+          letter-spacing: -0.02em;
+        }
 
-          .privacy-hero h1 span {
-            color: rgba(255, 255, 255, 0.28);
-          }
+        .section-body strong {
+          color: rgba(255, 255, 255, 0.82);
+          font-weight: 600;
+        }
 
-          .hero-description {
-            position: relative;
-            max-width: 650px;
-            margin: 48px 0 0;
-            color: var(--privacy-muted);
-            font-size: 17px;
-            line-height: 1.8;
-            animation: privacyFadeUp 800ms 160ms ease both;
-          }
+        .section-body a {
+          color: rgb(103, 232, 249);
+          text-decoration: none;
+          transition:
+            color 200ms ease,
+            opacity 200ms ease;
+        }
 
-          .hero-meta {
-            position: relative;
-            display: flex;
-            gap: 80px;
-            margin-top: 64px;
-            padding-top: 25px;
-            border-top: 1px solid var(--privacy-border);
-            animation: privacyFadeUp 800ms 240ms ease both;
-          }
+        .section-body a:hover {
+          color: white;
+        }
 
-          .hero-meta div {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-          }
+        .contact-box {
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          margin: 28px 0;
+          padding: 18px;
+          overflow: hidden;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 18px;
+          background: rgba(255, 255, 255, 0.025);
+        }
 
-          .hero-meta span,
-          .index-title,
-          .document-intro > span,
-          .privacy-end > span {
-            color: var(--privacy-soft);
-            font-size: 9px;
-            font-weight: 600;
-            letter-spacing: 0.2em;
-          }
+        .contact-icon {
+          display: flex;
+          width: 42px;
+          height: 42px;
+          flex-shrink: 0;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 13px;
+          background: rgba(103, 232, 249, 0.06);
+          color: rgb(103, 232, 249);
+        }
 
-          .hero-meta strong {
-            color: rgba(255, 255, 255, 0.78);
-            font-size: 13px;
-            font-weight: 500;
-          }
+        .contact-content {
+          display: flex;
+          min-width: 0;
+          flex-direction: column;
+          gap: 4px;
+        }
 
-          .privacy-main {
-            padding: 110px 0 130px;
-          }
+        .contact-content strong {
+          color: rgba(255, 255, 255, 0.82);
+          font-size: 13px;
+        }
 
-          .privacy-grid {
-            display: grid;
-            grid-template-columns: 210px minmax(0, 1fr);
-            gap: 100px;
-            align-items: start;
-          }
+        .contact-content a {
+          width: fit-content;
+          font-size: 13px;
+        }
 
-          .privacy-index {
-            position: sticky;
-            top: 32px;
-          }
-
-          .index-title {
-            margin-bottom: 22px;
-          }
-
-          .privacy-index nav {
-            display: flex;
-            flex-direction: column;
-            max-height: calc(100vh - 80px);
-            overflow-y: auto;
-            scrollbar-width: none;
-          }
-
-          .privacy-index nav::-webkit-scrollbar {
-            display: none;
-          }
-
-          .privacy-index a {
-            display: grid;
-            grid-template-columns: 30px minmax(0, 1fr);
-            gap: 8px;
-            padding: 8px 0;
-            color: rgba(255, 255, 255, 0.28);
-            text-decoration: none;
-            font-size: 10px;
-            line-height: 1.4;
-            transition:
-              color 220ms ease,
-              transform 220ms ease;
-          }
-
-          .privacy-index a span:first-child {
-            color: rgba(255, 255, 255, 0.18);
-            transition: color 220ms ease;
-          }
-
-          .privacy-index a:hover,
-          .privacy-index a.active {
-            color: rgba(255, 255, 255, 0.86);
-            transform: translateX(3px);
-          }
-
-          .privacy-index a:hover span:first-child,
-          .privacy-index a.active span:first-child {
-            color: var(--privacy-purple);
-          }
-
-          .document-intro {
-            max-width: 720px;
-            margin-bottom: 105px;
-          }
-
-          .document-intro p {
-            margin: 18px 0 0;
-            color: var(--privacy-muted);
-            font-size: 16px;
-            line-height: 1.85;
-          }
-
-          .privacy-section {
-            display: grid;
-            grid-template-columns: 55px minmax(0, 1fr);
-            gap: 28px;
-            padding-bottom: 105px;
-            margin-bottom: 105px;
-            border-bottom: 1px solid var(--privacy-border);
-            scroll-margin-top: 45px;
-          }
-
-          .section-marker {
-            padding-top: 7px;
-          }
-
-          .section-marker span {
-            color: rgba(139, 108, 255, 0.7);
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-          }
-
-          .section-copy h2 {
-            margin: 0 0 28px;
-            color: rgba(255, 255, 255, 0.94);
-            font-size: clamp(30px, 3.2vw, 48px);
-            line-height: 1.04;
-            letter-spacing: -0.045em;
-            font-weight: 500;
-          }
-
+        @media (max-width: 640px) {
           .section-body {
-            color: var(--privacy-muted);
-            font-size: 15px;
-            line-height: 1.9;
+            font-size: 14px;
+            line-height: 1.8;
           }
 
-          .section-body p {
-            margin: 0 0 21px;
+          .contact-box {
+            align-items: flex-start;
           }
 
-          .section-body p:last-child {
-            margin-bottom: 0;
+          .contact-content a {
+            overflow-wrap: anywhere;
           }
+        }
 
-          .section-body h3 {
-            margin: 40px 0 17px;
-            color: rgba(255, 255, 255, 0.82);
-            font-size: 18px;
-            line-height: 1.3;
-            font-weight: 500;
-            letter-spacing: -0.02em;
+        @media (prefers-reduced-motion: reduce) {
+          html {
+            scroll-behavior: auto;
           }
-
-          .section-body ul {
-            margin: 0 0 23px;
-            padding-left: 20px;
-          }
-
-          .section-body li {
-            margin: 7px 0;
-            padding-left: 5px;
-          }
-
-          .section-body li::marker {
-            color: rgba(139, 108, 255, 0.72);
-          }
-
-          .section-body strong {
-            color: rgba(255, 255, 255, 0.82);
-            font-weight: 500;
-          }
-
-          .section-body a {
-            color: #a995ff;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(169, 149, 255, 0.25);
-            transition: border-color 180ms ease;
-          }
-
-          .section-body a:hover {
-            border-color: #a995ff;
-          }
-
-          .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin: 30px 0;
-            padding: 25px 27px;
-            border-left: 1px solid rgba(139, 108, 255, 0.6);
-            background: rgba(255, 255, 255, 0.018);
-          }
-
-          .contact-details strong {
-            margin-bottom: 3px;
-          }
-
-          .contact-details a {
-            width: fit-content;
-          }
-
-          .privacy-end {
-            position: relative;
-            overflow: hidden;
-            padding: 52px;
-            border: 1px solid var(--privacy-border);
-            background:
-              radial-gradient(
-                circle at 90% 15%,
-                rgba(112, 71, 255, 0.13),
-                transparent 34%
-              ),
-              rgba(255, 255, 255, 0.015);
-          }
-
-          .privacy-end h2 {
-            margin: 18px 0 45px;
-            max-width: 650px;
-            font-size: clamp(36px, 5vw, 68px);
-            line-height: 0.98;
-            letter-spacing: -0.055em;
-            font-weight: 500;
-          }
-
-          .home-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            color: rgba(255, 255, 255, 0.78);
-            font-size: 12px;
-            text-decoration: none;
-            transition:
-              color 180ms ease,
-              gap 180ms ease;
-          }
-
-          .home-link span {
-            font-size: 15px;
-          }
-
-          .home-link:hover {
-            color: #fff;
-            gap: 16px;
-          }
-
-          @keyframes privacyFadeUp {
-            from {
-              opacity: 0;
-              transform: translateY(22px);
-            }
-
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          @media (prefers-reduced-motion: reduce) {
-            .eyebrow,
-            .privacy-hero h1,
-            .hero-description,
-            .hero-meta {
-              animation: none;
-            }
-
-            .privacy-index a,
-            .home-link,
-            .section-body a {
-              transition: none;
-            }
-          }
-
-          @media (max-width: 950px) {
-            .privacy-container {
-              width: min(100% - 48px, 1240px);
-            }
-
-            .privacy-hero {
-              min-height: auto;
-              padding: 115px 0 85px;
-            }
-
-            .privacy-grid {
-              grid-template-columns: 1fr;
-              gap: 55px;
-            }
-
-            .privacy-index {
-              position: relative;
-              top: auto;
-            }
-
-            .privacy-index nav {
-              display: grid;
-              grid-template-columns: repeat(2, minmax(0, 1fr));
-              grid-auto-flow: row;
-              column-gap: 30px;
-              max-height: 300px;
-            }
-
-            .document-intro {
-              margin-bottom: 80px;
-            }
-          }
-
-          @media (max-width: 600px) {
-            .privacy-container {
-              width: calc(100% - 32px);
-            }
-
-            .privacy-hero {
-              padding: 88px 0 68px;
-            }
-
-            .eyebrow {
-              margin-bottom: 30px;
-            }
-
-            .privacy-hero h1 {
-              font-size: clamp(62px, 19vw, 90px);
-            }
-
-            .hero-description {
-              margin-top: 32px;
-              font-size: 15px;
-              line-height: 1.75;
-            }
-
-            .hero-meta {
-              flex-direction: column;
-              gap: 20px;
-              margin-top: 45px;
-            }
-
-            .privacy-main {
-              padding: 68px 0 85px;
-            }
-
-            .privacy-index nav {
-              grid-template-columns: 1fr;
-              max-height: 245px;
-            }
-
-            .privacy-index a {
-              padding: 7px 0;
-            }
-
-            .document-intro {
-              margin-bottom: 65px;
-            }
-
-            .document-intro p {
-              font-size: 15px;
-            }
-
-            .privacy-section {
-              grid-template-columns: 1fr;
-              gap: 11px;
-              padding-bottom: 65px;
-              margin-bottom: 65px;
-              scroll-margin-top: 25px;
-            }
-
-            .section-marker {
-              padding-top: 0;
-            }
-
-            .section-copy h2 {
-              margin-bottom: 21px;
-              font-size: 31px;
-            }
-
-            .section-body {
-              font-size: 14.5px;
-              line-height: 1.82;
-            }
-
-            .section-body h3 {
-              margin-top: 32px;
-            }
-
-            .privacy-end {
-              padding: 32px 25px;
-            }
-
-            .privacy-end h2 {
-              margin-bottom: 38px;
-              font-size: 39px;
-            }
-          }
-        `}
-      </style>
+        }
+      `}</style>
     </main>
   );
 }
