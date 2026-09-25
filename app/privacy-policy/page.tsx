@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import PrivacyPolicy from "@/app/components/components/PrivacyPolicy";
+import PrivacyPolicy from "@/app/components/PrivacyPolicy";
 import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
