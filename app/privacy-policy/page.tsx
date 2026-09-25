@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import PrivacyPolicy from "@/app/components/PrivacyPolicy";
-import Footer from "@/app/components/Footer";
+import Footer from "@/app/components/components/Footer";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | One Tech Work",
