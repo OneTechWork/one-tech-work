@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import TermsOfService from "@/app/components/TermsofService";
-import Footer from "@/app/components/Footer";
+import Footer from "@/app/components/components/Footer";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | One Tech Work",
