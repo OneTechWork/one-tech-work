@@ -122,14 +122,16 @@ export default function Footer() {
             href="/"
             className="group inline-flex items-center gap-3"
           >
-            <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] p-1.5 shadow-[0_0_30px_rgba(34,211,238,0.06)] transition-all duration-500 ease-out group-hover:scale-105 group-hover:border-cyan-300/25 group-hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]">
+            {/* Logo */}
+            <div className="relative flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] shadow-[0_0_30px_rgba(34,211,238,0.06)] transition-all duration-500 ease-out group-hover:scale-105 group-hover:border-cyan-300/25 group-hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]">
               <img
                 src="/images/logo.png"
                 alt="One Tech Work"
-                className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                className="h-full w-full scale-[1.18] object-cover transition-transform duration-500 group-hover:scale-[1.25]"
               />
             </div>
 
+            {/* Brand Text */}
             <div className="text-left">
               <div className="text-[15px] font-bold tracking-[0.09em] text-white">
                 ONE TECH WORK
@@ -168,7 +170,7 @@ export default function Footer() {
           })}
         </div>
 
-        {/* 2 × 2 Matrix — Mobile & Desktop */}
+        {/* 2 × 2 Matrix */}
         <div className="mx-auto mt-14 grid max-w-4xl grid-cols-2">
           {footerSections.map((section, index) => (
             <div
