@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import ConsentPopup from "./components/ConsentPopup";
 
 const GA_MEASUREMENT_ID = "G-6B8S08C0QL";
 
@@ -124,6 +125,9 @@ export default function RootLayout({
         <main className="flex-1">
           {children}
         </main>
+
+        {/* Global Consent Popup */}
+        <ConsentPopup />
 
         {/* Google Analytics */}
         <Script
