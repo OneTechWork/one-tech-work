@@ -107,7 +107,7 @@ export default function Footer() {
         className="pointer-events-none absolute bottom-0 right-0 h-[320px] w-[320px] rounded-full bg-violet-500/[0.035] blur-[120px]"
       />
 
-      <div className="relative mx-auto max-w-5xl px-5 pb-8 pt-14 sm:px-8 lg:pt-16">
+      <div className="relative mx-auto max-w-5xl px-4 pb-8 pt-14 sm:px-8 lg:pt-16">
         {/* Brand */}
         <div className="flex flex-col items-center text-center">
           <Link
@@ -160,38 +160,38 @@ export default function Footer() {
           })}
         </div>
 
-        {/* 2 × 2 Matrix */}
-        <div className="mx-auto mt-14 grid max-w-4xl grid-cols-1 sm:grid-cols-2">
+        {/* 2 × 2 Matrix — Mobile & Desktop */}
+        <div className="mx-auto mt-14 grid max-w-4xl grid-cols-2">
           {footerSections.map((section, index) => (
             <div
               key={section.title}
               className={[
-                "px-5 py-7 sm:px-8",
+                "px-3 py-7 sm:px-8",
                 index === 0
-                  ? "border-b border-white/[0.07] sm:border-r"
+                  ? "border-b border-r border-white/[0.07]"
                   : "",
                 index === 1
                   ? "border-b border-white/[0.07]"
                   : "",
                 index === 2
-                  ? "border-b border-white/[0.07] sm:border-b-0 sm:border-r"
+                  ? "border-r border-white/[0.07]"
                   : "",
               ].join(" ")}
             >
-              <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/45">
+              <h3 className="text-[10px] font-semibold uppercase tracking-[0.14em] text-white/45 sm:text-[11px] sm:tracking-[0.18em]">
                 {section.title}
               </h3>
 
-              <div className="mt-5 space-y-3.5">
+              <div className="mt-5 space-y-3">
                 {section.links.map((link) => (
                   <Link
                     key={`${section.title}-${link.name}`}
                     href={link.href}
-                    className="group flex w-fit items-center gap-1.5 text-sm text-white/50 transition-all duration-300 ease-out hover:translate-x-1 hover:text-white"
+                    className="group flex w-fit items-center gap-1 text-[12px] text-white/50 transition-all duration-300 ease-out hover:translate-x-1 hover:text-white sm:gap-1.5 sm:text-sm"
                   >
                     <span>{link.name}</span>
 
-                    <ArrowUpRight className="h-3.5 w-3.5 -translate-x-1 -translate-y-1 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
+                    <ArrowUpRight className="h-3 w-3 -translate-x-1 -translate-y-1 shrink-0 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 sm:h-3.5 sm:w-3.5" />
                   </Link>
                 ))}
               </div>
@@ -230,7 +230,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-7 border-t border-white/[0.07] pt-6">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-[11px] text-white/25">
+            <p className="text-center text-[11px] text-white/25 sm:text-left">
               © {new Date().getFullYear()} One Tech Work. All rights reserved.
             </p>
 
