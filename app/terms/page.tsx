@@ -1,4 +1,4 @@
-import TermsOfService from "@/app/components/TermsOfService";
+import TermsOfService from "@/app/components/TermsofService";
 
 export default function TermsPage() {
   return <TermsOfService />;
