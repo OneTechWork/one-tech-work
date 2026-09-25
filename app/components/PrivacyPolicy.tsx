@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowUpRight,
-  Check,
   FileText,
   Mail,
   ShieldCheck,
@@ -17,9 +16,7 @@ const sections = [
     title: "Scope of This Privacy Policy",
     content: (
       <>
-        <p>
-          This Privacy Policy applies to information collected through:
-        </p>
+        <p>This Privacy Policy applies to information collected through:</p>
 
         <ul>
           <li>The One Tech Work website</li>
@@ -436,7 +433,7 @@ const sections = [
           <li>You, through your authenticated account</li>
           <li>
             Authorized One Tech Work personnel who require access to provide
-            the Service
+            the service
           </li>
           <li>Technology and service providers supporting our operations</li>
           <li>Hosting and infrastructure providers</li>
@@ -662,16 +659,14 @@ const sections = [
           please contact us.
         </p>
 
-        <div className="mt-5 rounded-2xl border border-cyan-300/10 bg-cyan-300/[0.03] p-5">
-          <div className="flex items-center gap-3">
-            <Mail className="h-4 w-4 text-cyan-300" />
-            <span className="text-sm text-white/70">
-              officialonetechwork@gmail.com
-            </span>
-          </div>
-        </div>
+        <p>
+          Email:{" "}
+          <a href="mailto:officialonetechwork@gmail.com">
+            officialonetechwork@gmail.com
+          </a>
+        </p>
 
-        <p className="mt-5">
+        <p>
           We may request information necessary to verify your identity before
           processing an account deletion request.
         </p>
@@ -765,7 +760,7 @@ const sections = [
         </ul>
 
         <p>
-          When changes are made, we will update the “Last Updated” date at the
+          When changes are made, we will update the "Last Updated" date at the
           top of this Privacy Policy.
         </p>
 
@@ -785,45 +780,29 @@ const sections = [
           this Privacy Policy or your personal information, please contact us.
         </p>
 
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
-          <div className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5">
-            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/25">
-              Organization
-            </p>
-            <p className="mt-2 text-sm font-medium text-white/75">
-              One Tech Work
-            </p>
-          </div>
+        <p>
+          <strong>One Tech Work</strong>
+        </p>
 
-          <div className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5">
-            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/25">
-              Email
-            </p>
-            <a
-              href="mailto:officialonetechwork@gmail.com"
-              className="mt-2 block break-all text-sm font-medium text-cyan-200 transition-colors hover:text-white"
-            >
-              officialonetechwork@gmail.com
-            </a>
-          </div>
+        <p>
+          Website:{" "}
+          <a
+            href="https://onetechwork.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            onetechwork.com
+          </a>
+        </p>
 
-          <div className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 sm:col-span-2">
-            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/25">
-              Website
-            </p>
-            <a
-              href="https://onetechwork.com"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-cyan-200 transition-colors hover:text-white"
-            >
-              onetechwork.com
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
-          </div>
-        </div>
+        <p>
+          Email:{" "}
+          <a href="mailto:officialonetechwork@gmail.com">
+            officialonetechwork@gmail.com
+          </a>
+        </p>
 
-        <p className="mt-6">
+        <p>
           We will make reasonable efforts to respond to privacy-related
           inquiries in a timely manner.
         </p>
@@ -846,26 +825,6 @@ const sections = [
           after an updated Privacy Policy becomes effective constitutes
           acknowledgment of the updated policy, subject to applicable law.
         </p>
-
-        <div className="mt-7 grid gap-3 sm:grid-cols-2">
-          <div className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5">
-            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/25">
-              One Tech Work
-            </p>
-            <p className="mt-2 text-sm text-white/60">
-              Digital solutions built for growth.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5">
-            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/25">
-              Last Updated
-            </p>
-            <p className="mt-2 text-sm text-white/60">
-              September 25, 2026
-            </p>
-          </div>
-        </div>
       </>
     ),
   },
@@ -912,209 +871,170 @@ export default function PrivacyPolicy() {
           }}
           className="absolute -right-48 top-[38%] h-[500px] w-[500px] rounded-full bg-violet-600/10 blur-[150px]"
         />
-
-        <div className="absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-violet-500/[0.035] blur-[130px]" />
       </div>
 
       {/* Hero */}
-      <section className="relative z-10 px-5 pb-12 pt-36 sm:px-8 sm:pt-40 lg:px-12 lg:pb-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium text-white/60 backdrop-blur-xl sm:text-sm"
-            >
-              <ShieldCheck className="h-4 w-4 text-cyan-300" />
-              <span>Your Privacy Matters</span>
-            </motion.div>
+      <section className="relative z-10 px-5 pb-14 pt-36 sm:px-8 sm:pt-40 lg:px-12">
+        <div className="mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium text-white/60 backdrop-blur-xl sm:text-sm"
+          >
+            <ShieldCheck className="h-4 w-4 text-cyan-300" />
+            <span>Your Privacy Matters</span>
+          </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 35 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.85, delay: 0.1 }}
-              className="text-5xl font-semibold leading-[0.95] tracking-[-0.055em] sm:text-6xl md:text-7xl lg:text-[82px]"
-            >
-              Privacy
-              <span className="block bg-gradient-to-r from-white via-cyan-200 to-violet-300 bg-clip-text text-transparent">
-                Policy.
-              </span>
-            </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 35 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: 0.1 }}
+            className="text-5xl font-semibold leading-[0.95] tracking-[-0.055em] sm:text-6xl md:text-7xl lg:text-[82px]"
+          >
+            Privacy
+            <span className="block bg-gradient-to-r from-white via-cyan-200 to-violet-300 bg-clip-text text-transparent">
+              Policy.
+            </span>
+          </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.25 }}
-              className="mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg sm:leading-8"
-            >
-              This Privacy Policy explains how One Tech Work collects, uses,
-              stores, protects, and manages information when you use our
-              website, application, and services.
-            </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.25 }}
+            className="mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg sm:leading-8"
+          >
+            This Privacy Policy explains how One Tech Work collects, uses,
+            stores, protects, and manages information when you use our
+            website, application, and services.
+          </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.35 }}
-              className="mt-7 flex items-center gap-2 text-xs text-white/30"
-            >
-              <FileText className="h-4 w-4 text-cyan-300/70" />
-              <span>Last Updated: September 25, 2026</span>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="mt-7 flex items-center gap-2 text-xs text-white/30"
+          >
+            <FileText className="h-4 w-4 text-cyan-300/70" />
+            <span>Last Updated: September 25, 2026</span>
+          </motion.div>
         </div>
       </section>
 
-      {/* Intro */}
-      <section className="relative z-10 px-5 pb-12 sm:px-8 lg:px-12 lg:pb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
-          className="mx-auto max-w-7xl"
-        >
-          <div className="relative overflow-hidden rounded-[28px] border border-white/[0.08] bg-white/[0.035] p-6 backdrop-blur-xl sm:p-8 lg:p-10">
-            <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-cyan-400/10 blur-[90px]" />
-
-            <div className="relative flex gap-4">
-              <div className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] sm:flex">
-                <Sparkles className="h-4 w-4 text-cyan-300" />
-              </div>
-
-              <div>
-                <p className="text-sm leading-7 text-white/50 sm:text-base">
-                  At One Tech Work, we aim to handle personal information
-                  responsibly and transparently. This policy describes the
-                  information we may collect and the ways in which it may be
-                  used while providing our digital products and services.
-                </p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Policy Sections */}
+      {/* Document */}
       <section className="relative z-10 px-5 pb-24 sm:px-8 lg:px-12 lg:pb-32">
-        <div className="mx-auto max-w-7xl">
-          <div className="space-y-4">
+        <div className="mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.7 }}
+            className="border-t border-white/[0.08] pt-10 sm:pt-12"
+          >
+            <div className="flex items-start gap-4">
+              <Sparkles className="mt-1 hidden h-5 w-5 shrink-0 text-cyan-300/70 sm:block" />
+
+              <p className="max-w-4xl text-base leading-8 text-white/50 sm:text-[17px]">
+                At One Tech Work, we aim to handle personal information
+                responsibly and transparently. This policy describes the
+                information we may collect and the ways in which it may be used
+                while providing our digital products and services.
+              </p>
+            </div>
+          </motion.div>
+
+          <div className="mt-14 space-y-14 sm:mt-16 sm:space-y-16">
             {sections.map((section, index) => (
-              <motion.article
+              <motion.section
                 key={section.number}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.08 }}
                 transition={{
                   duration: 0.6,
-                  delay: Math.min(index * 0.02, 0.12),
+                  delay: Math.min(index * 0.015, 0.1),
                 }}
-                className="group relative overflow-hidden rounded-[26px] border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl transition-all duration-500 hover:border-white/[0.14] hover:bg-white/[0.045]"
+                className="relative"
               >
-                <div className="pointer-events-none absolute -right-24 -top-24 h-52 w-52 rounded-full bg-cyan-400/0 blur-[90px] transition-all duration-700 group-hover:bg-cyan-400/[0.07]" />
-
-                <div className="relative grid gap-6 p-6 sm:p-8 lg:grid-cols-[110px_1fr] lg:gap-8 lg:p-10">
-                  <div className="flex items-start gap-4 lg:block">
-                    <span className="text-xs font-medium tracking-[0.22em] text-cyan-300/60">
-                      {section.number}
-                    </span>
-
-                    <div className="mt-0.5 h-px flex-1 bg-gradient-to-r from-cyan-300/20 to-transparent lg:mt-5 lg:w-12" />
+                <div className="flex gap-5 sm:gap-7">
+                  <div className="hidden w-10 shrink-0 pt-1 text-xs font-medium tracking-[0.18em] text-cyan-300/55 sm:block">
+                    {section.number}
                   </div>
 
-                  <div className="min-w-0">
-                    <h2 className="text-2xl font-semibold tracking-[-0.025em] text-white sm:text-3xl">
-                      {section.title}
-                    </h2>
+                  <div className="min-w-0 flex-1">
+                    <div className="mb-6 flex items-baseline gap-4 sm:gap-5">
+                      <span className="text-xs font-medium tracking-[0.18em] text-cyan-300/55 sm:hidden">
+                        {section.number}
+                      </span>
 
-                    <div className="policy-content mt-6 text-sm leading-7 text-white/45 sm:text-[15px] sm:leading-7">
+                      <h2 className="text-2xl font-semibold tracking-[-0.025em] text-white sm:text-[30px]">
+                        {section.title}
+                      </h2>
+                    </div>
+
+                    <div className="policy-content max-w-4xl text-[15px] leading-7 text-white/45 sm:text-base sm:leading-8">
                       {section.content}
-                    </div>
-
-                    <div className="mt-8 h-px w-full overflow-hidden bg-white/[0.06]">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: "100%" }}
-                        viewport={{ once: true }}
-                        transition={{
-                          duration: 0.9,
-                          delay: 0.15,
-                        }}
-                        className="h-full bg-gradient-to-r from-cyan-300/50 via-violet-400/40 to-transparent"
-                      />
-                    </div>
-
-                    <div className="mt-5 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-white/20">
-                      <Check className="h-3.5 w-3.5 text-cyan-300/60" />
-                      One Tech Work Privacy
                     </div>
                   </div>
                 </div>
-              </motion.article>
+
+                {index !== sections.length - 1 && (
+                  <div className="mt-14 h-px bg-gradient-to-r from-white/[0.08] via-white/[0.04] to-transparent sm:mt-16" />
+                )}
+              </motion.section>
             ))}
           </div>
+
+          {/* Contact */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="mt-20 border-t border-white/[0.08] pt-10 sm:mt-24 sm:pt-12"
+          >
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-cyan-300/60">
+              Questions?
+            </p>
+
+            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
+              Need more information?
+            </h2>
+
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-white/40 sm:text-base">
+              If you have questions, concerns, requests, or complaints about
+              your privacy or personal information, our team is available to
+              help.
+            </p>
+
+            <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a
+                href="mailto:officialonetechwork@gmail.com"
+                className="group inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:scale-[1.02] hover:bg-cyan-100"
+              >
+                <Mail className="h-4 w-4" />
+                Contact One Tech Work
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </a>
+
+              <Link
+                href="/"
+                className="inline-flex w-fit items-center gap-2 text-sm font-medium text-white/40 transition-colors hover:text-white"
+              >
+                Back to Home
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="relative z-10 px-5 pb-24 sm:px-8 lg:px-12 lg:pb-32">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8 }}
-          className="mx-auto max-w-7xl"
-        >
-          <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.035] px-6 py-12 text-center backdrop-blur-xl sm:px-10 sm:py-16">
-            <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-[110px]" />
+      {/* Bottom glow */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#030305] to-transparent" />
 
-            <div className="relative z-10">
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-cyan-300/70">
-                Privacy Questions?
-              </p>
-
-              <h2 className="mx-auto max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
-                We&apos;re here to help you
-                <span className="bg-gradient-to-r from-cyan-200 to-violet-300 bg-clip-text text-transparent">
-                  {" "}
-                  understand.
-                </span>
-              </h2>
-
-              <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-white/40 sm:text-base">
-                If you have questions, concerns, or requests regarding your
-                personal information, contact the One Tech Work team.
-              </p>
-
-              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <a
-                  href="mailto:officialonetechwork@gmail.com"
-                  className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:scale-[1.03] hover:bg-cyan-100"
-                >
-                  Contact Us
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </a>
-
-                <Link
-                  href="/"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-6 py-3.5 text-sm font-medium text-white/60 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
-                >
-                  Back to Home
-                </Link>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Bottom fade */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#030305] to-transparent" />
-
-      {/* Page-only styling */}
       <style jsx>{`
         .policy-content p {
-          margin: 0 0 1.1rem;
+          margin: 0 0 1.25rem;
         }
 
         .policy-content p:last-child {
@@ -1122,44 +1042,44 @@ export default function PrivacyPolicy() {
         }
 
         .policy-content ul {
-          margin: 1rem 0 1.25rem;
-          padding: 0;
-          list-style: none;
+          margin: 1rem 0 1.35rem;
+          padding-left: 1.35rem;
         }
 
         .policy-content li {
-          position: relative;
-          padding-left: 1.5rem;
-          margin-bottom: 0.65rem;
+          margin-bottom: 0.55rem;
+          padding-left: 0.25rem;
         }
 
-        .policy-content li::before {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: 0.72rem;
-          width: 5px;
-          height: 5px;
-          border-radius: 9999px;
-          background: rgb(103 232 249 / 0.65);
-          box-shadow: 0 0 12px rgb(103 232 249 / 0.25);
+        .policy-content li::marker {
+          color: rgb(103 232 249 / 0.55);
         }
 
         .policy-content h3 {
-          margin: 1.75rem 0 0.85rem;
+          margin: 2rem 0 0.9rem;
           color: rgb(255 255 255 / 0.78);
-          font-size: 0.95rem;
+          font-size: 1rem;
           font-weight: 600;
           letter-spacing: -0.01em;
         }
 
+        .policy-content strong {
+          color: rgb(255 255 255 / 0.75);
+          font-weight: 600;
+        }
+
         .policy-content a {
           color: rgb(165 243 252 / 0.85);
-          transition: color 200ms ease;
+          text-decoration: underline;
+          text-decoration-color: rgb(165 243 252 / 0.2);
+          text-underline-offset: 4px;
+          transition: color 200ms ease,
+            text-decoration-color 200ms ease;
         }
 
         .policy-content a:hover {
           color: white;
+          text-decoration-color: rgb(255 255 255 / 0.5);
         }
       `}</style>
     </main>
