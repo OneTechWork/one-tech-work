@@ -27,11 +27,7 @@ export default function ConsentPopup() {
   };
 
   const handleReject = () => {
-    /*
-     * Reject karne par consent save nahi kiya ja raha.
-     * Isliye user website ke andar enter nahi kar sakta.
-     */
-    setStatus("pending");
+    window.location.replace("about:blank");
   };
 
   if (status === "loading" || status === "accepted") {
@@ -40,7 +36,7 @@ export default function ConsentPopup() {
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 px-4 backdrop-blur-md">
-      {/* Popup Glow */}
+      {/* Background Glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute h-[420px] w-[420px] rounded-full bg-cyan-400/[0.08] blur-[120px]"
@@ -74,8 +70,10 @@ export default function ConsentPopup() {
 
           <p className="mt-3 text-sm leading-6 text-white/55">
             By selecting{" "}
-            <span className="font-medium text-white/80">Accept All</span>,
-            you agree to our{" "}
+            <span className="font-medium text-white/80">
+              Accept All
+            </span>
+            , you agree to our{" "}
             <Link
               href="/terms"
               className="font-medium text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 transition-all duration-300 hover:text-cyan-200 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.65)]"
@@ -94,6 +92,7 @@ export default function ConsentPopup() {
 
           {/* Buttons */}
           <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+            {/* Reject */}
             <button
               type="button"
               onClick={handleReject}
@@ -102,6 +101,7 @@ export default function ConsentPopup() {
               Reject All
             </button>
 
+            {/* Accept */}
             <button
               type="button"
               onClick={handleAccept}
@@ -111,7 +111,7 @@ export default function ConsentPopup() {
             </button>
           </div>
 
-          {/* Small Notice */}
+          {/* Notice */}
           <p className="mt-5 text-center text-[10px] leading-5 text-white/25">
             You must accept to continue using One Tech Work.
           </p>
