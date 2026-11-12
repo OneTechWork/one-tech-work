@@ -1,56 +1,55 @@
+
 import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://onetechwork.com";
+const BASE_URL = "https://onetechwork.com";
 
-  return [
+export default function sitemap(): MetadataRoute.Sitemap {
+  const pages = [
     {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
+      path: "",
       priority: 1,
+      changeFrequency: "weekly" as const,
     },
     {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      path: "/about",
       priority: 0.8,
+      changeFrequency: "monthly" as const,
     },
     {
-      url: `${baseUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
+      path: "/services",
       priority: 0.9,
+      changeFrequency: "weekly" as const,
     },
     {
-      url: `${baseUrl}/portfolio`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
+      path: "/portfolio",
       priority: 0.9,
+      changeFrequency: "weekly" as const,
     },
     {
-      url: `${baseUrl}/testimonials`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      path: "/testimonials",
       priority: 0.7,
+      changeFrequency: "monthly" as const,
     },
     {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      path: "/contact",
       priority: 0.8,
+      changeFrequency: "monthly" as const,
     },
     {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      path: "/privacy-policy",
       priority: 0.5,
+      changeFrequency: "yearly" as const,
     },
     {
-      url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      path: "/terms",
       priority: 0.5,
+      changeFrequency: "yearly" as const,
     },
   ];
+
+  return pages.map((page) => ({
+    url: `${BASE_URL}${page.path}`,
+    changeFrequency: page.changeFrequency,
+    priority: page.priority,
+  }));
 }
