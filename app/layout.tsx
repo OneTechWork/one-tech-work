@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -7,6 +8,12 @@ import Navbar from "./components/Navbar";
 import ConsentPopup from "./components/ConsentPopup";
 
 const GA_MEASUREMENT_ID = "G-6B8S08C0QL";
+
+const BASE_URL = "https://onetechwork.com";
+const ORGANIZATION_ID = `${BASE_URL}/#organization`;
+const WEBSITE_ID = `${BASE_URL}/#website`;
+const FOUNDER_ID = `${BASE_URL}/#founder`;
+const LOGO_URL = `${BASE_URL}/images/logo.png`;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -57,10 +64,10 @@ export const metadata: Metadata = {
     title: "One Tech Work | Web Development, Mobile Apps & Software",
     description:
       "Professional website development, mobile apps, custom software and UI/UX design solutions by One Tech Work.",
-    url: "https://onetechwork.com",
+    url: BASE_URL,
     images: [
       {
-        url: "https://onetechwork.com/images/logo.png",
+        url: LOGO_URL,
         width: 1200,
         height: 630,
         alt: "One Tech Work",
@@ -73,27 +80,74 @@ export const metadata: Metadata = {
     title: "One Tech Work | Web Development, Mobile Apps & Software",
     description:
       "Professional website development, mobile apps, custom software and UI/UX design solutions by One Tech Work.",
-    images: ["https://onetechwork.com/images/logo.png"],
+    images: [LOGO_URL],
   },
 };
 
-const organizationSchema = {
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "One Tech Work",
-  url: "https://onetechwork.com",
-  logo: "https://onetechwork.com/images/logo.png",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": ORGANIZATION_ID,
+      name: "One Tech Work",
+      alternateName: "OneTechWork",
+      url: BASE_URL,
 
-  description:
-    "One Tech Work provides professional website development, mobile app development, custom software and UI/UX design solutions.",
+      logo: {
+        "@type": "ImageObject",
+        url: LOGO_URL,
+      },
 
-  email: "officialonetechwork@gmail.com",
-  telephone: "+919424527241",
+      image: LOGO_URL,
 
-  sameAs: [
-    "https://www.instagram.com/onetechwork",
-    "https://www.facebook.com/share/1PryPPtESX/",
-    "https://youtube.com/@onetechwork",
+      description:
+        "One Tech Work provides professional website development, mobile app development, custom software and UI/UX design solutions for businesses and individuals.",
+
+      email: "officialonetechwork@gmail.com",
+      telephone: "+919424527241",
+
+      founder: {
+        "@id": FOUNDER_ID,
+      },
+
+      knowsAbout: [
+        "Website Development",
+        "Web Application Development",
+        "Mobile App Development",
+        "Custom Software Development",
+        "UI/UX Design",
+        "Digital Solutions",
+      ],
+
+      sameAs: [
+        "https://www.instagram.com/onetechwork",
+        "https://m.facebook.com/profile.php?id=1347320471791716",
+        "https://youtube.com/@onetechwork",
+      ],
+    },
+
+    {
+      "@type": "Person",
+      "@id": FOUNDER_ID,
+      name: "Faiz Khan",
+      url: BASE_URL,
+      worksFor: {
+        "@id": ORGANIZATION_ID,
+      },
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": WEBSITE_ID,
+      url: BASE_URL,
+      name: "One Tech Work",
+      alternateName: "OneTechWork",
+      publisher: {
+        "@id": ORGANIZATION_ID,
+      },
+      inLanguage: "en-IN",
+    },
   ],
 };
 
@@ -108,11 +162,11 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        {/* Organization Structured Data */}
+        {/* OneTechWork Entity, Founder and Website Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
           }}
         />
       </head>
@@ -122,9 +176,7 @@ export default function RootLayout({
         <Navbar />
 
         {/* Page Content */}
-        <main className="flex-1">
-          {children}
-        </main>
+        <main className="flex-1">{children}</main>
 
         {/* Global Consent Popup */}
         <ConsentPopup />
